@@ -79,6 +79,7 @@ const { eyebrow, heading, steps } = home.howWeWork;
     font-weight: 600;
     line-height: 1;
     margin-bottom: 1rem;
+    overflow-wrap: break-word;
   }
 
   .how__step-text {
@@ -139,6 +140,7 @@ const { eyebrow, heading, steps } = home.howWeWork;
 
     .how__step {
       width: 44%;
+      container-type: inline-size;
     }
 
     .how__step[data-align='left'] {
@@ -149,6 +151,10 @@ const { eyebrow, heading, steps } = home.howWeWork;
     .how__step[data-align='right'] {
       margin-left: auto;
       text-align: left;
+    }
+
+    .how__step-name {
+      font-size: clamp(2.5rem, 13cqw, 3.75rem);
     }
   }
 
