@@ -1,0 +1,131 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+const allFaqs = (await getCollection('faqs')).sort((a, b) => a.data.order - b.data.order);
+const categories = [...new Set(allFaqs.map((f) => f.data.category))];
+---
+
+<Layout
+  title="FAQs"
+  description="Answers to common questions about SEO, websites, timelines, reporting, AI tools, pricing, contracts, and support at Amplivate."
+>
+  <section class="faqs-hero">
+    <div class="container">
+      <span class="eyebrow">FAQs</span>
+      <h1 class="faqs-hero__heading">Questions worth answering upfront.</h1>
+    </div>
+  </section>
+
+  <section class="faqs-list">
+    <div class="container">
+      {categories.map((category) => (
+        <div class="faqs-list__group">
+          <p class="faqs-list__category">{category}</p>
+          <div class="faqs-list__items">
+            {allFaqs
+              .filter((f) => f.data.category === category)
+              .map((f) => (
+                <details class="faqs-list__item">
+                  <summary>{f.data.question}</summary>
+                  <p>{f.data.answer}</p>
+                </details>
+              ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="faqs-cta">
+    <div class="container faqs-cta__inner">
+      <h2>Still have a question?</h2>
+      <a href="/contact" class="button button--primary">Contact Amplivate</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .faqs-hero {
+    padding-block: clamp(4rem, 10vw, 7rem) clamp(2.5rem, 6vw, 4rem);
+  }
+
+  .faqs-hero__heading {
+    font-size: var(--step-3xl);
+    max-width: 18ch;
+    margin-top: 0.75rem;
+  }
+
+  .faqs-list {
+    padding-block: 0 var(--section-padding);
+  }
+
+  .faqs-list__group {
+    max-width: 760px;
+    margin-bottom: 3rem;
+  }
+
+  .faqs-list__category {
+    font-size: var(--step-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-accent-strong);
+    margin-bottom: 1rem;
+  }
+
+  .faqs-list__items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faqs-list__item {
+    border-top: 1px solid var(--color-light-grey);
+    padding-block: 1.25rem;
+  }
+
+  .faqs-list__items .faqs-list__item:last-child {
+    border-bottom: 1px solid var(--color-light-grey);
+  }
+
+  .faqs-list__item summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: var(--step-lg);
+    font-family: var(--font-heading);
+    list-style: none;
+  }
+
+  .faqs-list__item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faqs-list__item summary::after {
+    content: '+';
+    float: right;
+    color: var(--color-accent-strong);
+  }
+
+  .faqs-list__item[open] summary::after {
+    content: '−';
+  }
+
+  .faqs-list__item p {
+    color: var(--color-slate-blue);
+    margin-top: 0.75rem;
+    max-width: 65ch;
+  }
+
+  .faqs-cta {
+    padding-block: var(--section-padding);
+    background: var(--color-charcoal);
+    color: var(--color-white);
+    text-align: center;
+  }
+
+  .faqs-cta__inner h2 {
+    font-size: var(--step-2xl);
+    color: var(--color-white);
+    margin-bottom: 2rem;
+  }
+</style>

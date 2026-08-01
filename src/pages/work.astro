@@ -1,0 +1,110 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+const projects = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout
+  title="Work"
+  description="A look at the kind of SEO, branding, website, and AI automation work Amplivate builds for UK local businesses."
+>
+  <section class="work-hero">
+    <div class="container">
+      <span class="eyebrow">Our work</span>
+      <h1 class="work-hero__heading">A look at what we build.</h1>
+      <p class="work-hero__note">
+        Amplivate is a new agency — the projects below are concept work showing the kind of
+        thing we build, not live client results yet. They'll be replaced with real case studies,
+        including measurable outcomes, as client projects launch.
+      </p>
+    </div>
+  </section>
+
+  <section class="work-list">
+    <div class="container">
+      {projects.map((project) => (
+        <article class="work-list__item">
+          <p class="work-list__tag">{project.data.tag}</p>
+          <h2 class="work-list__title">{project.data.title}</h2>
+          <p class="work-list__text">{project.data.text}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="work-cta">
+    <div class="container work-cta__inner">
+      <h2>Want to be one of the first real case studies?</h2>
+      <a href="/contact#strategy-call" class="button button--primary">Book a Free Strategy Call</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .work-hero {
+    padding-block: clamp(4rem, 10vw, 7rem) clamp(2.5rem, 6vw, 4rem);
+  }
+
+  .work-hero__heading {
+    font-size: var(--step-3xl);
+    max-width: 18ch;
+    margin-top: 0.75rem;
+  }
+
+  .work-hero__note {
+    color: var(--color-slate-blue);
+    max-width: 60ch;
+    margin-top: 1.25rem;
+    font-size: var(--step-lg);
+  }
+
+  .work-list {
+    padding-block: 0 var(--section-padding);
+  }
+
+  .work-list__item {
+    padding-block: 2.5rem;
+    border-top: 1px solid var(--color-light-grey);
+  }
+
+  .work-list__item:last-child {
+    border-bottom: 1px solid var(--color-light-grey);
+  }
+
+  .work-list__tag {
+    font-size: var(--step-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-accent-strong);
+    margin-bottom: 0.75rem;
+  }
+
+  .work-list__title {
+    font-size: var(--step-xl);
+    max-width: 34ch;
+    margin-bottom: 0.75rem;
+  }
+
+  .work-list__text {
+    color: var(--color-slate-blue);
+    max-width: 60ch;
+    font-size: var(--step-base);
+  }
+
+  .work-cta {
+    padding-block: var(--section-padding);
+    background: var(--color-charcoal);
+    color: var(--color-white);
+    text-align: center;
+  }
+
+  .work-cta__inner h2 {
+    font-size: var(--step-2xl);
+    color: var(--color-white);
+    margin-bottom: 2rem;
+    max-width: 20ch;
+    margin-inline: auto;
+  }
+</style>

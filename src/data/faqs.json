@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "id": "seo-guarantee",
+      "order": 1,
+      "category": "SEO",
+      "question": "Can you guarantee a number one ranking?",
+      "answer": "No, and any agency that promises this isn't being straight with you — nobody controls Google's algorithm. What we can guarantee is a properly executed strategy and honest reporting on what it's achieving."
+    },
+    {
+      "id": "website-ownership",
+      "order": 2,
+      "category": "Websites",
+      "question": "Do I own my website once it's built?",
+      "answer": "Yes, completely. The site, the content, and the domain are yours — there's no dependency on us to keep it running."
+    },
+    {
+      "id": "timelines",
+      "order": 3,
+      "category": "Timelines",
+      "question": "How quickly will I see results?",
+      "answer": "It depends on the service — SEO typically takes 8–12 weeks to show movement, while a new website or ad campaign can start generating enquiries within days of going live."
+    },
+    {
+      "id": "reporting",
+      "order": 4,
+      "category": "Reporting",
+      "question": "How will I know what I'm getting for my money?",
+      "answer": "You'll get monthly reporting written in plain English, not a dashboard full of numbers with no explanation. If something isn't working, we'll tell you."
+    },
+    {
+      "id": "ai-data",
+      "order": 5,
+      "category": "AI tools",
+      "question": "Is my customer data safe with the AI tools you use?",
+      "answer": "Yes — the tools we use are limited to your own business data, such as your services and review requests, and don't share it beyond what's needed to do the job."
+    },
+    {
+      "id": "pricing-hidden-fees",
+      "order": 6,
+      "category": "Pricing",
+      "question": "Are there any hidden fees on top of the monthly plan?",
+      "answer": "No. The only additional cost is ad spend if you're running Google Ads, and that goes straight to Google, not to us. Everything else is covered in your fixed monthly price."
+    },
+    {
+      "id": "contracts",
+      "order": 7,
+      "category": "Contracts",
+      "question": "Am I locked into a long contract?",
+      "answer": "No — our plans run monthly with no long-term tie-in. We'd rather earn your business every month than lock you into a contract."
+    },
+    {
+      "id": "support",
+      "order": 8,
+      "category": "Support",
+      "question": "Who do I actually speak to if I have a question?",
+      "answer": "The person doing the work — not a call centre or a rotating account manager. Direct access is part of how we operate."
+    }
+  ]
+}

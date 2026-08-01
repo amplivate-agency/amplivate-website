@@ -1,0 +1,281 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import PricingCards from '../components/PricingCards.astro';
+
+const tiers = (await getCollection('pricingTiers'))
+  .sort((a, b) => a.data.order - b.data.order)
+  .map((t) => t.data);
+
+const addons = (await getCollection('addons')).sort((a, b) => a.data.order - b.data.order);
+
+// The comparison table's rows are every feature that appears anywhere,
+// in the order the highest tier lists them — since each tier's feature
+// list is cumulative, the top tier already contains every row in order.
+const allFeatures = tiers[tiers.length - 1].features;
+---
+
+<Layout
+  title="Pricing"
+  description="Three fixed monthly plans for UK local businesses, plus add-ons like AI review automation, chatbots, and Google Ads management."
+>
+  <section class="pricing-hero">
+    <div class="container">
+      <span class="eyebrow">Pricing</span>
+      <h1 class="pricing-hero__heading">Three plans, no surprises.</h1>
+      <p class="pricing-hero__text">
+        Fixed monthly pricing based on what your business actually needs. No long contracts,
+        no hidden line items.
+      </p>
+    </div>
+  </section>
+
+  <section class="pricing-cards-section">
+    <div class="container">
+      <PricingCards tiers={tiers} />
+    </div>
+  </section>
+
+  <section class="pricing-compare">
+    <div class="container">
+      <h2>Compare plans</h2>
+      <div class="pricing-compare__table-wrap">
+        <table class="pricing-compare__table">
+          <thead>
+            <tr>
+              <th scope="col">Feature</th>
+              {tiers.map((tier) => <th scope="col">{tier.name}</th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {allFeatures.map((feature) => (
+              <tr>
+                <th scope="row">{feature}</th>
+                {tiers.map((tier) => (
+                  <td>
+                    {tier.features.includes(feature) ? (
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-label="Included">
+                        <path d="M5 13l4.5 4.5L19 7" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    ) : (
+                      <span class="pricing-compare__dash" aria-hidden="true">—</span>
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
+            <tr>
+              <th scope="row">Price</th>
+              {tiers.map((tier) => (
+                <td class="pricing-compare__price">{tier.price}{tier.priceNote}</td>
+              ))}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="addons">
+    <div class="container">
+      <div class="addons__header">
+        <span class="eyebrow">Add-ons</span>
+        <h2>Premium add-ons</h2>
+        <p>Extra, standalone services that layer on top of any plan — or work on their own.</p>
+      </div>
+
+      <div class="addons__list">
+        {addons.map((addon) => (
+          <article class="addons__item">
+            <h3>{addon.data.name}</h3>
+            <p class="addons__what">{addon.data.whatItDoes}</p>
+            <p class="addons__why"><strong>Why it's valuable:</strong> {addon.data.whyValuable}</p>
+            <ul class="addons__benefits">
+              {addon.data.benefits.map((b) => <li>{b}</li>)}
+            </ul>
+            <p class="addons__price">{addon.data.price}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing-cta">
+    <div class="container pricing-cta__inner">
+      <h2>Not sure which plan fits?</h2>
+      <a href="/contact#strategy-call" class="button button--primary">Book a Free Strategy Call</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .pricing-hero {
+    padding-block: clamp(4rem, 10vw, 7rem) clamp(2.5rem, 6vw, 4rem);
+    text-align: center;
+  }
+
+  .pricing-hero__heading {
+    font-size: var(--step-3xl);
+    margin-top: 0.75rem;
+  }
+
+  .pricing-hero__text {
+    color: var(--color-slate-blue);
+    font-size: var(--step-lg);
+    max-width: 50ch;
+    margin-inline: auto;
+    margin-top: 1.25rem;
+  }
+
+  .pricing-cards-section {
+    padding-block: 0 var(--section-padding);
+  }
+
+  .pricing-compare {
+    padding-block: var(--section-padding);
+    background: var(--color-bg-subtle);
+  }
+
+  .pricing-compare h2 {
+    font-size: var(--step-2xl);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .pricing-compare__table-wrap {
+    overflow-x: auto;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-light-grey);
+  }
+
+  .pricing-compare__table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 560px;
+  }
+
+  .pricing-compare__table th,
+  .pricing-compare__table td {
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--color-light-grey);
+  }
+
+  .pricing-compare__table thead th {
+    font-family: var(--font-heading);
+    font-size: var(--step-lg);
+    font-weight: 600;
+  }
+
+  .pricing-compare__table th[scope='row'] {
+    text-align: left;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  .pricing-compare__table thead th:first-child,
+  .pricing-compare__table th[scope='row'] {
+    padding-left: 1.5rem;
+  }
+
+  .pricing-compare__table svg {
+    display: inline-block;
+  }
+
+  .pricing-compare__dash {
+    color: var(--color-silver);
+  }
+
+  .pricing-compare__price {
+    font-weight: 700;
+  }
+
+  .addons {
+    padding-block: var(--section-padding);
+  }
+
+  .addons__header {
+    max-width: 640px;
+    margin-bottom: 3rem;
+  }
+
+  .addons__header h2 {
+    font-size: var(--step-2xl);
+    margin-block: 0.75rem 1rem;
+  }
+
+  .addons__header p {
+    color: var(--color-slate-blue);
+  }
+
+  .addons__list {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .addons__item {
+    border: 1px solid var(--color-light-grey);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+  }
+
+  .addons__item h3 {
+    font-size: var(--step-lg);
+    margin-bottom: 0.75rem;
+  }
+
+  .addons__what,
+  .addons__why {
+    color: var(--color-slate-blue);
+    margin-bottom: 0.75rem;
+  }
+
+  .addons__benefits {
+    list-style: none;
+    margin-bottom: 1.25rem;
+  }
+
+  .addons__benefits li {
+    position: relative;
+    padding-left: 1.25rem;
+    color: var(--color-slate-blue);
+    font-size: var(--step-sm);
+    margin-bottom: 0.4rem;
+  }
+
+  .addons__benefits li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+
+  .addons__price {
+    font-weight: 700;
+    color: var(--color-accent-strong);
+  }
+
+  @media (min-width: 800px) {
+    .addons__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .pricing-cta {
+    padding-block: var(--section-padding);
+    background: var(--color-charcoal);
+    color: var(--color-white);
+    text-align: center;
+  }
+
+  .pricing-cta__inner h2 {
+    font-size: var(--step-2xl);
+    color: var(--color-white);
+    margin-bottom: 2rem;
+  }
+</style>

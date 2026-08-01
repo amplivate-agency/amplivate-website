@@ -1,0 +1,49 @@
+{
+  "items": [
+    {
+      "id": "hvac-local-seo",
+      "order": 1,
+      "featured": true,
+      "isConcept": true,
+      "tag": "Concept · Local SEO",
+      "title": "Rebuilding search visibility for an independent HVAC company",
+      "text": "A ground-up Google Business Profile and local SEO structure for a trades business competing against national franchises on search — the kind of groundwork most local businesses are missing."
+    },
+    {
+      "id": "fitness-studio-branding",
+      "order": 2,
+      "featured": true,
+      "isConcept": true,
+      "tag": "Concept · Branding & Website",
+      "title": "A new identity and site for a boutique fitness studio",
+      "text": "Brand identity and a conversion-focused website built around class bookings and trial sign-ups, replacing a generic template site that wasn't built to sell anything."
+    },
+    {
+      "id": "dental-review-automation",
+      "order": 3,
+      "featured": true,
+      "isConcept": true,
+      "tag": "Concept · AI Solutions",
+      "title": "AI review follow-up for a multi-location practice",
+      "text": "Automated, on-brand review requests and a first-response chatbot designed to handle the repetitive enquiries that were previously eating up front-desk time."
+    },
+    {
+      "id": "plumbing-google-ads",
+      "order": 4,
+      "featured": false,
+      "isConcept": true,
+      "tag": "Concept · Google Ads",
+      "title": "Rebuilding a wasted ad budget for a local plumbing company",
+      "text": "A campaign restructure aimed at emergency call-out searches instead of broad, expensive keywords that were burning budget without producing enquiries."
+    },
+    {
+      "id": "dental-website-rebuild",
+      "order": 5,
+      "featured": false,
+      "isConcept": true,
+      "tag": "Concept · Website Design",
+      "title": "A conversion-focused rebuild for an independent dental practice",
+      "text": "Replacing an outdated site with a fast, mobile-first build structured around booking enquiries rather than a static About page nobody reads."
+    }
+  ]
+}

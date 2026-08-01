@@ -1,0 +1,155 @@
+---
+import Layout from '../layouts/Layout.astro';
+import about from '../data/about.json';
+---
+
+<Layout
+  title="About"
+  description="Amplivate is a small, UK-wide digital growth agency built to work directly with local businesses, not through layers of account managers."
+>
+  <section class="about-hero">
+    <div class="container">
+      <span class="eyebrow">About Amplivate</span>
+      <h1 class="about-hero__heading">{about.heading}</h1>
+    </div>
+  </section>
+
+  <section class="about-block">
+    <div class="container about-block__inner">
+      <h2>Why Amplivate exists</h2>
+      <p>{about.whyExists}</p>
+    </div>
+  </section>
+
+  <section class="about-block about-block--subtle">
+    <div class="container about-block__inner">
+      <h2>Our mission</h2>
+      <p>{about.mission}</p>
+    </div>
+  </section>
+
+  <section class="about-values">
+    <div class="container">
+      <h2>Values</h2>
+      <div class="about-values__grid">
+        {about.values.map((v) => (
+          <div class="about-values__item">
+            <p class="about-values__title">{v.title}</p>
+            <p class="about-values__text">{v.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="about-block">
+    <div class="container about-block__inner">
+      <h2>What makes us different</h2>
+      <p>{about.whatMakesDifferent}</p>
+    </div>
+  </section>
+
+  <section class="about-block about-block--subtle">
+    <div class="container about-block__inner">
+      <h2>How we help businesses grow</h2>
+      <p>{about.howWeHelp}</p>
+    </div>
+  </section>
+
+  <section class="about-block">
+    <div class="container about-block__inner">
+      <h2>Vision for the future</h2>
+      <p>{about.vision}</p>
+    </div>
+  </section>
+
+  <section class="about-cta">
+    <div class="container about-cta__inner">
+      <h2>Let's talk about your business.</h2>
+      <a href="/contact#strategy-call" class="button button--primary">Book a Free Strategy Call</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .about-hero {
+    padding-block: clamp(4rem, 10vw, 7rem) clamp(2.5rem, 6vw, 4rem);
+  }
+
+  .about-hero__heading {
+    font-size: var(--step-3xl);
+    max-width: 18ch;
+    margin-top: 0.75rem;
+  }
+
+  .about-block {
+    padding-block: clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  .about-block--subtle {
+    background: var(--color-bg-subtle);
+  }
+
+  .about-block__inner {
+    max-width: 720px;
+  }
+
+  .about-block h2 {
+    font-size: var(--step-xl);
+    margin-bottom: 1rem;
+  }
+
+  .about-block p {
+    color: var(--color-slate-blue);
+    font-size: var(--step-lg);
+  }
+
+  .about-values {
+    padding-block: clamp(3rem, 6vw, 5rem);
+  }
+
+  .about-values h2 {
+    font-size: var(--step-xl);
+    margin-bottom: 2rem;
+  }
+
+  .about-values__grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .about-values__item {
+    border-top: 1px solid var(--color-light-grey);
+    padding-top: 1.5rem;
+  }
+
+  .about-values__title {
+    font-family: var(--font-heading);
+    font-size: var(--step-lg);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .about-values__text {
+    color: var(--color-slate-blue);
+  }
+
+  @media (min-width: 700px) {
+    .about-values__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .about-cta {
+    padding-block: var(--section-padding);
+    background: var(--color-charcoal);
+    color: var(--color-white);
+    text-align: center;
+  }
+
+  .about-cta__inner h2 {
+    font-size: var(--step-2xl);
+    color: var(--color-white);
+    margin-bottom: 2rem;
+  }
+</style>

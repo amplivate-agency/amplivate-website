@@ -1,0 +1,69 @@
+{
+  "items": [
+    {
+      "id": "ai-review-system",
+      "order": 1,
+      "name": "AI Google Review Follow-up System",
+      "whatItDoes": "Automatically follows up with customers after a job or purchase, asking happy customers to leave a review at the right moment — and routing unhappy ones to you privately first.",
+      "whyValuable": "Most satisfied customers never leave a review simply because nobody asked at the right time. This closes that gap without you having to chase anyone manually.",
+      "price": "From £49/month",
+      "benefits": [
+        "More reviews from customers who were already happy",
+        "No manual chasing required",
+        "Negative feedback caught before it goes public"
+      ]
+    },
+    {
+      "id": "ai-website-chatbot",
+      "order": 2,
+      "name": "AI Website Chatbot",
+      "whatItDoes": "A chatbot trained on your services, pricing structure, and common questions, live on your website around the clock.",
+      "whyValuable": "Enquiries that come in outside office hours are usually lost. This answers the common questions immediately and hands qualified leads straight to you.",
+      "price": "From £79/month",
+      "benefits": [
+        "Enquiries answered outside business hours",
+        "Fewer repetitive questions in your inbox",
+        "Leads captured, not lost"
+      ]
+    },
+    {
+      "id": "google-ads-management",
+      "order": 3,
+      "name": "Google Ads Management",
+      "whatItDoes": "Campaign strategy, setup, and ongoing management of your Google Ads account, aimed at enquiries rather than clicks.",
+      "whyValuable": "Ad spend managed properly can be one of the fastest ways to generate new enquiries — badly managed, it's one of the fastest ways to lose money.",
+      "price": "Custom quote, based on ad spend and goals",
+      "benefits": [
+        "Campaigns targeted at people ready to buy",
+        "Full visibility into where your budget goes",
+        "Ongoing optimisation, not a set-and-forget campaign"
+      ]
+    },
+    {
+      "id": "website-design",
+      "order": 4,
+      "name": "Website Design",
+      "whatItDoes": "A custom-built, mobile-first website designed around what your customers need to see to actually get in touch.",
+      "whyValuable": "A site that looks fine but doesn't convert is costing you enquiries every day it's live.",
+      "price": "Custom quote, based on project scope",
+      "benefits": [
+        "Built around your business, not a template",
+        "Fast, mobile-first, and easy to update yourself",
+        "A foundation that makes every other service work harder"
+      ]
+    },
+    {
+      "id": "branding",
+      "order": 5,
+      "name": "Branding",
+      "whatItDoes": "A visual identity — logo, colours, typography, and guidelines — that stays consistent everywhere your business appears.",
+      "whyValuable": "Inconsistent branding quietly undermines trust. A consistent identity does the opposite, for free, everywhere it shows up.",
+      "price": "Custom quote, based on project scope",
+      "benefits": [
+        "A professional, consistent look across every touchpoint",
+        "Assets you own and can hand to anyone",
+        "A brand that matches the quality of your actual work"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "items": [
+    {
+      "id": "starter",
+      "order": 1,
+      "name": "Starter",
+      "price": "£299",
+      "priceNote": "/month",
+      "tagline": "Ideal for businesses establishing their online presence.",
+      "features": ["Local SEO", "Google Business Profile Optimisation", "Monthly Reporting"],
+      "ctaLabel": "Get Started",
+      "ctaHref": "/contact"
+    },
+    {
+      "id": "growth",
+      "order": 2,
+      "name": "Growth",
+      "price": "£499",
+      "priceNote": "/month",
+      "tagline": "Ideal for growing businesses wanting more visibility.",
+      "features": ["Local SEO", "Google Business Profile Optimisation", "Monthly Reporting", "Blog Content", "Local Citations", "Website Updates"],
+      "ctaLabel": "Get Started",
+      "ctaHref": "/contact"
+    },
+    {
+      "id": "elite",
+      "order": 3,
+      "name": "Elite",
+      "price": "£799",
+      "priceNote": "/month",
+      "tagline": "Ideal for businesses wanting maximum growth.",
+      "features": ["Local SEO", "Google Business Profile Optimisation", "Monthly Reporting", "Blog Content", "Local Citations", "Website Updates", "AI Content", "Conversion Optimisation", "Priority Support"],
+      "ctaLabel": "Get Started",
+      "ctaHref": "/contact"
+    }
+  ]
+}

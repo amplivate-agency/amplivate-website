@@ -1,0 +1,78 @@
+{
+  "hero": {
+    "headline": "Digital marketing built around your business.",
+    "subhead": "Bespoke SEO, websites, advertising, and AI-powered follow-up — managed by people who actually look at your results, not just report them.",
+    "ctaPrimaryLabel": "Book a Free Strategy Call",
+    "ctaPrimaryHref": "/contact#strategy-call",
+    "ctaSecondaryLabel": "View Services",
+    "ctaSecondaryHref": "/services"
+  },
+  "trust": {
+    "points": [
+      {
+        "ghost": "Bespoke",
+        "heading": "Bespoke strategy for every client.",
+        "text": "Every plan starts with what's actually happening in your market — not a generic package rolled out to everyone."
+      },
+      {
+        "ghost": "Transparent",
+        "heading": "Pricing and reporting you can actually understand.",
+        "text": "Fixed monthly pricing, no hidden line items, and reports that explain what happened instead of burying it in jargon."
+      },
+      {
+        "ghost": "Practical",
+        "heading": "AI used where it actually helps.",
+        "text": "Automating repetitive work like review follow-up and first-response chat — not replacing judgement on the parts that need it."
+      },
+      {
+        "ghost": "Direct",
+        "heading": "Small by design.",
+        "text": "You work directly with the people actually doing the work, not a rotating cast of account managers passing you up a chain."
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "What we do",
+    "heading": "The core services most local businesses need — plus the AI tools that used to be out of reach."
+  },
+  "howWeWork": {
+    "eyebrow": "How we work",
+    "heading": "Four steps. No surprises in between.",
+    "steps": [
+      {
+        "name": "Discovery",
+        "text": "We start by understanding what's actually happening in your business — not a template intake form, an actual conversation about your goals, your customers, and what's not working yet."
+      },
+      {
+        "name": "Strategy",
+        "text": "From there, a plan specific to your market: which services matter first, what a realistic timeline looks like, and what success actually looks like for you."
+      },
+      {
+        "name": "Implementation",
+        "text": "SEO, your website, branding, campaigns — built and set live, with you kept in the loop rather than finding out after the fact."
+      },
+      {
+        "name": "Growth",
+        "text": "Results get tracked, reported honestly, and the strategy adjusts as your business and your market change. This doesn't stop once the site's live."
+      }
+    ]
+  },
+  "work": {
+    "eyebrow": "Our work",
+    "heading": "A look at what we build.",
+    "note": "Amplivate is a new agency — these are concept projects showing the kind of work we do, not live client results yet. Real case studies will replace these as projects launch."
+  },
+  "pricing": {
+    "eyebrow": "Pricing",
+    "heading": "Three plans, no surprises.",
+    "text": "Fixed monthly pricing based on what your business actually needs."
+  },
+  "finalCta": {
+    "heading": "Ready to grow your business?",
+    "text": "Book a free strategy call — no pressure, no scripted pitch, just a conversation about what's actually possible for your business.",
+    "ctaPrimaryLabel": "Book Your Free Strategy Call",
+    "ctaPrimaryHref": "/contact#strategy-call",
+    "ctaSecondaryLabel": "Contact Amplivate",
+    "ctaSecondaryHref": "/contact"
+  }
+}

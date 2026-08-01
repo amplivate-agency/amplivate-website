@@ -1,0 +1,270 @@
+# Same pattern as blindspot-agency: Decap's "github" backend, fronted by a
+# self-hosted Cloudflare Worker OAuth proxy (see /cms-oauth-worker) instead
+# of Netlify Identity. base_url still needs updating once the worker is
+# deployed — see the deploy notes in README.md.
+backend:
+  name: github
+  repo: amplivate-agency/amplivate-website
+  branch: main
+  base_url: https://amplivate-cms-auth.YOUR_SUBDOMAIN.workers.dev
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "services"
+    label: "Services"
+    files:
+      - file: "src/data/services.json"
+        label: "Services"
+        name: "services"
+        fields:
+          - label: "Services"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "ID / URL slug", name: "id", widget: "string", hint: "Used in the page URL (/services/this-value) — avoid changing after publishing." }
+              - { label: "Display order", name: "order", widget: "number" }
+              - label: "Group"
+                name: "group"
+                widget: "select"
+                options: ["Visibility & marketing", "AI solutions"]
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Short summary (used on cards)", name: "summary", widget: "string" }
+              - { label: "Overview", name: "overview", widget: "text" }
+              - { label: "Benefits", name: "benefits", widget: "list" }
+              - { label: "What's included", name: "whatsIncluded", widget: "list" }
+              - label: "Process steps"
+                name: "process"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Step title", name: "title", widget: "string" }
+                  - { label: "Step description", name: "description", widget: "text" }
+              - label: "FAQs"
+                name: "faqs"
+                widget: "list"
+                summary: "{{fields.question}}"
+                fields:
+                  - { label: "Question", name: "question", widget: "string" }
+                  - { label: "Answer", name: "answer", widget: "text" }
+
+  - name: "pricing_tiers"
+    label: "Pricing Tiers"
+    files:
+      - file: "src/data/pricing-tiers.json"
+        label: "Pricing Tiers"
+        name: "pricing_tiers"
+        fields:
+          - label: "Tiers"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Display order (left to right)", name: "order", widget: "number" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Price", name: "price", widget: "string", hint: "e.g. £299" }
+              - { label: "Price note", name: "priceNote", widget: "string", hint: "e.g. /month" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - label: "Features (cumulative)"
+                name: "features"
+                widget: "list"
+                hint: "The FULL list of everything this tier includes, not just what's new. The site works out the 'Everything in X, plus:' wording and the comparison table automatically from this."
+              - { label: "Button label", name: "ctaLabel", widget: "string" }
+              - { label: "Button link", name: "ctaHref", widget: "string" }
+
+  - name: "addons"
+    label: "Add-ons"
+    files:
+      - file: "src/data/addons.json"
+        label: "Add-ons"
+        name: "addons"
+        fields:
+          - label: "Add-ons"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Display order", name: "order", widget: "number" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "What it does", name: "whatItDoes", widget: "text" }
+              - { label: "Why it's valuable", name: "whyValuable", widget: "text" }
+              - { label: "Price", name: "price", widget: "string" }
+              - { label: "Benefits", name: "benefits", widget: "list" }
+
+  - name: "work"
+    label: "Work / Portfolio"
+    files:
+      - file: "src/data/work.json"
+        label: "Work"
+        name: "work"
+        fields:
+          - label: "Projects"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Display order", name: "order", widget: "number" }
+              - { label: "Show on homepage", name: "featured", widget: "boolean", default: false }
+              - { label: "This is concept/demo work, not a real client", name: "isConcept", widget: "boolean", default: true, hint: "Uncheck only once this is a genuine completed client project." }
+              - { label: "Tag", name: "tag", widget: "string", hint: "e.g. Concept · Local SEO" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "text", widget: "text" }
+              - { label: "Images", name: "images", widget: "list", field: { label: "Image", name: "image", widget: "image" }, required: false }
+              - label: "Metrics"
+                name: "metrics"
+                widget: "list"
+                required: false
+                hint: "Only add real, verifiable numbers — leave empty otherwise."
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Value", name: "value", widget: "string" }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    files:
+      - file: "src/data/testimonials.json"
+        label: "Testimonials"
+        name: "testimonials"
+        fields:
+          - label: "Testimonials"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Company", name: "company", widget: "string" }
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Rating (1-5)", name: "rating", widget: "number", min: 1, max: 5 }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+
+  - name: "faqs"
+    label: "FAQs (general)"
+    files:
+      - file: "src/data/faqs.json"
+        label: "FAQs"
+        name: "faqs"
+        fields:
+          - label: "FAQs"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.question}}"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Display order", name: "order", widget: "number" }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options: ["SEO", "Websites", "Timelines", "Reporting", "AI tools", "Pricing", "Contracts", "Support"]
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+
+  - name: "pages"
+    label: "Page content"
+    files:
+      - file: "src/data/home.json"
+        label: "Home page"
+        name: "home"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Headline", name: "headline", widget: "string" }
+              - { label: "Subheading", name: "subhead", widget: "text" }
+              - { label: "Primary button label", name: "ctaPrimaryLabel", widget: "string" }
+              - { label: "Primary button link", name: "ctaPrimaryHref", widget: "string" }
+              - { label: "Secondary button label", name: "ctaSecondaryLabel", widget: "string" }
+              - { label: "Secondary button link", name: "ctaSecondaryHref", widget: "string" }
+          - label: "Trust section"
+            name: "trust"
+            widget: "object"
+            fields:
+              - label: "Points"
+                name: "points"
+                widget: "list"
+                summary: "{{fields.heading}}"
+                fields:
+                  - { label: "Background word", name: "ghost", widget: "string" }
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text" }
+          - label: "Services section"
+            name: "services"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "text" }
+          - label: "How We Work section"
+            name: "howWeWork"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Steps (keep to 4 — the layout is built for four)"
+                name: "steps"
+                widget: "list"
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: "Step name", name: "name", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text" }
+          - label: "Work section"
+            name: "work"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Note", name: "note", widget: "text" }
+          - label: "Pricing section"
+            name: "pricing"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+          - label: "Final CTA"
+            name: "finalCta"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Primary button label", name: "ctaPrimaryLabel", widget: "string" }
+              - { label: "Primary button link", name: "ctaPrimaryHref", widget: "string" }
+              - { label: "Secondary button label", name: "ctaSecondaryLabel", widget: "string" }
+              - { label: "Secondary button link", name: "ctaSecondaryHref", widget: "string" }
+
+      - file: "src/data/about.json"
+        label: "About page"
+        name: "about"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Why Amplivate exists", name: "whyExists", widget: "text" }
+          - { label: "Mission", name: "mission", widget: "text" }
+          - label: "Values"
+            name: "values"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+          - { label: "What makes us different", name: "whatMakesDifferent", widget: "text" }
+          - { label: "How we help businesses grow", name: "howWeHelp", widget: "text" }
+          - { label: "Vision for the future", name: "vision", widget: "text" }
+
+      - file: "src/data/site-settings.json"
+        label: "Site settings"
+        name: "site_settings"
+        fields:
+          - { label: "Contact email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string", required: false }
+          - { label: "Coverage area", name: "region", widget: "string" }
+          - label: "Social links"
+            name: "socials"
+            widget: "object"
+            fields:
+              - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+              - { label: "Instagram", name: "instagram", widget: "string", required: false }
+              - { label: "Facebook", name: "facebook", widget: "string", required: false }

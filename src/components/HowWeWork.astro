@@ -1,0 +1,205 @@
+---
+import home from '../data/home.json';
+const { eyebrow, heading, steps } = home.howWeWork;
+---
+
+<section class="how" id="how-we-work">
+  <div class="container">
+    <div class="how__header">
+      <span class="eyebrow">{eyebrow}</span>
+      <h2 class="how__heading">{heading}</h2>
+    </div>
+
+    <div class="how__body">
+      <div class="how__spine" aria-hidden="true">
+        <div class="how__spine-track"></div>
+        <div class="how__spine-fill" id="how-spine-fill"></div>
+        <div class="how__nodes">
+          {steps.map((_, i) => (
+            <span class="how__node" data-node style={`--n: ${i}`}></span>
+          ))}
+        </div>
+      </div>
+
+      <ol class="how__steps">
+        {steps.map((step, i) => (
+          <li class="how__step" data-align={i % 2 === 0 ? 'left' : 'right'}>
+            <p class="how__step-name">{step.name}</p>
+            <p class="how__step-text">{step.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<style>
+  .how {
+    padding-block: var(--section-padding);
+    background: var(--color-charcoal);
+    color: var(--color-white);
+  }
+
+  .how__header {
+    max-width: 640px;
+    margin-bottom: 3rem;
+  }
+
+  .how .eyebrow {
+    color: var(--color-steel-blue);
+  }
+
+  .how__heading {
+    font-size: var(--step-2xl);
+    color: var(--color-white);
+  }
+
+  .how__body {
+    position: relative;
+  }
+
+  .how__spine {
+    display: none;
+  }
+
+  .how__steps {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  .how__step {
+    max-width: 560px;
+  }
+
+  .how__step-name {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .how__step-text {
+    color: var(--color-silver);
+    font-size: var(--step-base);
+  }
+
+  @media (min-width: 900px) {
+    .how__spine {
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      transform: translateX(-50%);
+    }
+
+    .how__spine-track {
+      position: absolute;
+      inset: 0;
+      background: rgba(184, 189, 197, 0.2);
+    }
+
+    .how__spine-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0%;
+      background: linear-gradient(var(--color-steel-blue), var(--color-slate-blue));
+      transition: height 0.15s linear;
+    }
+
+    .how__nodes {
+      position: absolute;
+      inset: 0;
+    }
+
+    .how__node {
+      position: absolute;
+      left: 50%;
+      top: calc(var(--n) * 33.33% + 2%);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--color-charcoal);
+      border: 2px solid var(--color-silver);
+      transform: translate(-50%, -50%);
+      transition: background 0.4s var(--ease-out), border-color 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+    }
+
+    .how__node.is-active {
+      background: var(--color-steel-blue);
+      border-color: var(--color-steel-blue);
+      box-shadow: 0 0 0 6px rgba(100, 124, 153, 0.25);
+    }
+
+    .how__step {
+      width: 44%;
+    }
+
+    .how__step[data-align='left'] {
+      margin-right: auto;
+      text-align: right;
+    }
+
+    .how__step[data-align='right'] {
+      margin-left: auto;
+      text-align: left;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .how__spine-fill {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const section = document.getElementById('how-we-work');
+  const fill = document.getElementById('how-spine-fill');
+  const nodes = document.querySelectorAll<HTMLElement>('[data-node]');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (section && fill) {
+    let ticking = false;
+
+    function update() {
+      ticking = false;
+      const rect = section!.getBoundingClientRect();
+      const viewportMid = window.innerHeight * 0.6;
+      // Progress rises as the section's top approaches the viewport's
+      // reading line, and finishes as its bottom passes it — same value
+      // going up or down, since it's read straight off scroll position.
+      const raw = (viewportMid - rect.top) / rect.height;
+      const progress = Math.min(1, Math.max(0, raw));
+
+      fill!.style.height = `${progress * 100}%`;
+
+      nodes.forEach((node, i) => {
+        const nodeThreshold = i / (nodes.length - 1);
+        node.classList.toggle('is-active', progress >= nodeThreshold - 0.02);
+      });
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    }
+
+    update();
+    if (!prefersReducedMotion) {
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+    } else {
+      fill.style.height = '100%';
+      nodes.forEach((node) => node.classList.add('is-active'));
+    }
+  }
+</script>

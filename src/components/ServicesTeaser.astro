@@ -1,0 +1,113 @@
+---
+import { getCollection } from 'astro:content';
+import home from '../data/home.json';
+
+const allServices = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+const groupOrder = ['Visibility & marketing', 'AI solutions'];
+const groups = groupOrder.map((label) => ({
+  label,
+  items: allServices.filter((s) => s.data.group === label),
+}));
+---
+
+<section class="services">
+  <div class="container">
+    <div class="services__header">
+      <span class="eyebrow">{home.services.eyebrow}</span>
+      <h2 class="services__heading">{home.services.heading}</h2>
+    </div>
+
+    <div class="services__groups">
+      {groups.map((group) => (
+        <div class="services__group">
+          <p class="services__group-label">{group.label}</p>
+          <ul class="services__list">
+            {group.items.map((item) => (
+              <li>
+                <a href={`/services/${item.id}`} class="services__item">
+                  <span class="services__item-title">{item.data.title}</span>
+                  <span class="services__item-summary">{item.data.summary}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    padding-block: var(--section-padding);
+  }
+
+  .services__header {
+    max-width: 640px;
+    margin-bottom: 3rem;
+  }
+
+  .services__heading {
+    font-size: var(--step-2xl);
+    font-weight: 600;
+  }
+
+  .services__groups {
+    display: grid;
+    gap: 3rem;
+  }
+
+  .services__group-label {
+    font-size: var(--step-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-accent-strong);
+    margin-bottom: 1.25rem;
+  }
+
+  .services__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .services__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    text-decoration: none;
+    color: var(--color-text);
+    padding-block: 1.5rem;
+    border-top: 1px solid var(--color-light-grey);
+    transition: padding-left 0.35s var(--ease-out), color 0.35s var(--ease-out);
+  }
+
+  .services__list li:last-child .services__item {
+    border-bottom: 1px solid var(--color-light-grey);
+  }
+
+  .services__item:hover {
+    padding-left: 0.75rem;
+    color: var(--color-accent-strong);
+  }
+
+  .services__item-title {
+    font-family: var(--font-heading);
+    font-size: var(--step-lg);
+    font-weight: 600;
+  }
+
+  .services__item-summary {
+    color: var(--color-slate-blue);
+    font-size: var(--step-sm);
+    max-width: 46ch;
+  }
+
+  @media (min-width: 900px) {
+    .services__groups {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+    }
+  }
+</style>

@@ -1,0 +1,11 @@
+name = "amplivate-contact-form"
+main = "worker.js"
+compatibility_date = "2026-07-01"
+
+[[send_email]]
+name = "EMAIL"
+
+[vars]
+FROM_EMAIL = "notifications@amplivate.co.uk"
+TO_EMAIL = "owner@example.com"
+ALLOWED_ORIGIN = "https://amplivate.co.uk"

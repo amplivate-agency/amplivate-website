@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Terms" description="Terms of service for working with Amplivate.">
+  <section class="legal">
+    <div class="container legal__inner">
+      <span class="eyebrow">Terms</span>
+      <h1>Terms of Service</h1>
+      <p class="legal__updated">Last updated: [date]</p>
+
+      <p class="legal__notice">
+        This is a draft structure, not a substitute for legal advice. Please have it reviewed
+        by a solicitor before launch, and fill in the bracketed details below.
+      </p>
+
+      <h2>Services</h2>
+      <p>
+        Amplivate provides digital marketing services including SEO, Google Business Profile
+        management, website design, branding, advertising management, and AI-powered tools,
+        as agreed with each client individually.
+      </p>
+
+      <h2>Plans and billing</h2>
+      <p>
+        Monthly plans are billed [state billing cycle/method]. Plans run month-to-month with
+        no long-term contract unless otherwise agreed in writing.
+      </p>
+
+      <h2>Cancellation</h2>
+      <p>[State notice period required to cancel a plan.]</p>
+
+      <h2>Website ownership</h2>
+      <p>
+        For website design projects, ownership of the final site, its content, and any
+        associated domain transfers to the client on full payment, unless otherwise agreed.
+      </p>
+
+      <h2>Limitation of liability</h2>
+      <p>
+        While we work to agreed strategies and industry good practice, we cannot guarantee
+        specific search rankings, ad performance, or business outcomes, as these depend on
+        factors outside our control, including third-party platforms like Google.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions about these terms can be sent to
+        <a href="mailto:hello@amplivate.co.uk">hello@amplivate.co.uk</a>.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .legal {
+    padding-block: clamp(4rem, 10vw, 6rem) var(--section-padding);
+  }
+
+  .legal__inner {
+    max-width: 720px;
+  }
+
+  .legal h1 {
+    font-size: var(--step-2xl);
+    margin-top: 0.5rem;
+  }
+
+  .legal__updated {
+    color: var(--color-slate-blue);
+    font-size: var(--step-sm);
+    margin-top: 0.5rem;
+  }
+
+  .legal__notice {
+    background: var(--color-bg-subtle);
+    border-left: 3px solid var(--color-accent);
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-sm);
+    font-size: var(--step-sm);
+    color: var(--color-slate-blue);
+    margin-top: 2rem;
+  }
+
+  .legal h2 {
+    font-size: var(--step-lg);
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .legal p {
+    color: var(--color-slate-blue);
+    line-height: 1.7;
+  }
+
+  .legal a {
+    color: var(--color-accent-strong);
+  }
+</style>

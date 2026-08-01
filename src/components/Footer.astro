@@ -1,0 +1,155 @@
+---
+const year = new Date().getFullYear();
+
+const siteLinks = [
+  { label: 'Services', href: '/services' },
+  { label: 'Work', href: '/work' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'About', href: '/about' },
+  { label: 'FAQs', href: '/faqs' },
+  { label: 'Contact', href: '/contact' },
+];
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <a href="/" class="site-footer__logo">
+        <img src="/images/logo.webp" alt="Amplivate" width="34" height="34" />
+        <span>Amplivate</span>
+      </a>
+      <p class="site-footer__tagline">Amplify Reach. Elevate Business.</p>
+    </div>
+
+    <nav class="site-footer__nav" aria-label="Footer">
+      <p class="site-footer__heading">Site</p>
+      <ul>
+        {siteLinks.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="site-footer__contact">
+      <p class="site-footer__heading">Get in touch</p>
+      <a href="mailto:hello@amplivate.co.uk">hello@amplivate.co.uk</a>
+      <p class="site-footer__note">UK-wide</p>
+    </div>
+  </div>
+
+  <div class="container site-footer__bottom">
+    <p>&copy; {year} Amplivate. All rights reserved.</p>
+    <div class="site-footer__legal">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-charcoal);
+    color: var(--color-light-grey);
+    padding-block: clamp(3rem, 6vw, 5rem) 2rem;
+  }
+
+  .site-footer__inner {
+    display: grid;
+    gap: 2.5rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(233, 233, 237, 0.14);
+  }
+
+  .site-footer__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .site-footer__logo img {
+    filter: brightness(0) invert(1);
+  }
+
+  .site-footer__tagline {
+    margin-top: 0.75rem;
+    color: var(--color-silver);
+    font-size: var(--step-sm);
+  }
+
+  .site-footer__heading {
+    font-size: var(--step-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-silver);
+    margin-bottom: 1rem;
+  }
+
+  .site-footer__nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .site-footer__nav a,
+  .site-footer__contact a {
+    text-decoration: none;
+    color: var(--color-light-grey);
+    font-size: var(--step-sm);
+    transition: color 0.3s var(--ease-out);
+  }
+
+  .site-footer__nav a:hover,
+  .site-footer__contact a:hover {
+    color: var(--color-white);
+  }
+
+  .site-footer__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-footer__note {
+    margin-top: 0.5rem;
+    color: var(--color-silver);
+    font-size: var(--step-sm);
+  }
+
+  .site-footer__bottom {
+    padding-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    font-size: var(--step-sm);
+    color: var(--color-silver);
+  }
+
+  .site-footer__legal {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .site-footer__legal a {
+    color: var(--color-silver);
+    text-decoration: none;
+  }
+
+  .site-footer__legal a:hover {
+    color: var(--color-white);
+  }
+
+  @media (min-width: 700px) {
+    .site-footer__inner {
+      grid-template-columns: 1.4fr 1fr 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,57 @@
+---
+import home from '../data/home.json';
+const cta = home.finalCta;
+---
+
+<section class="final-cta">
+  <div class="container final-cta__inner">
+    <h2 class="final-cta__heading">{cta.heading}</h2>
+    <p class="final-cta__text">{cta.text}</p>
+    <div class="final-cta__actions">
+      <a href={cta.ctaPrimaryHref} class="button button--primary">{cta.ctaPrimaryLabel}</a>
+      <a href={cta.ctaSecondaryHref} class="button button--secondary">{cta.ctaSecondaryLabel}</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .final-cta {
+    padding-block: var(--section-padding);
+    background: var(--color-charcoal);
+    color: var(--color-white);
+  }
+
+  .final-cta__inner {
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .final-cta__heading {
+    font-size: var(--step-2xl);
+    color: var(--color-white);
+  }
+
+  .final-cta__text {
+    color: var(--color-silver);
+    margin-top: 1.25rem;
+    font-size: var(--step-lg);
+  }
+
+  .final-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .final-cta .button--secondary {
+    color: var(--color-white);
+    border-color: var(--color-silver);
+  }
+
+  .final-cta .button--secondary:hover {
+    border-color: var(--color-white);
+  }
+</style>

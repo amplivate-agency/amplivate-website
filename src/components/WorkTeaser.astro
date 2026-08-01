@@ -1,0 +1,94 @@
+---
+import { getCollection } from 'astro:content';
+import home from '../data/home.json';
+
+const projects = (await getCollection('work'))
+  .filter((p) => p.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<section class="work">
+  <div class="container">
+    <div class="work__header">
+      <span class="eyebrow">{home.work.eyebrow}</span>
+      <h2 class="work__heading">{home.work.heading}</h2>
+      <p class="work__note">{home.work.note}</p>
+    </div>
+
+    <div class="work__list">
+      {projects.map((project) => (
+        <article class="work__item">
+          <p class="work__tag">{project.data.tag}</p>
+          <h3 class="work__title">{project.data.title}</h3>
+          <p class="work__text">{project.data.text}</p>
+        </article>
+      ))}
+    </div>
+
+    <a href="/work" class="work__more">See more work &rarr;</a>
+  </div>
+</section>
+
+<style>
+  .work {
+    padding-block: var(--section-padding);
+  }
+
+  .work__header {
+    max-width: 640px;
+    margin-bottom: 3.5rem;
+  }
+
+  .work__heading {
+    font-size: var(--step-2xl);
+    margin-block: 0.75rem 1rem;
+  }
+
+  .work__note {
+    color: var(--color-slate-blue);
+  }
+
+  .work__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .work__item {
+    padding-block: 2.5rem;
+    border-top: 1px solid var(--color-light-grey);
+  }
+
+  .work__item:last-child {
+    border-bottom: 1px solid var(--color-light-grey);
+  }
+
+  .work__tag {
+    font-size: var(--step-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-accent-strong);
+    margin-bottom: 0.75rem;
+  }
+
+  .work__title {
+    font-size: var(--step-xl);
+    max-width: 30ch;
+    margin-bottom: 0.75rem;
+  }
+
+  .work__text {
+    color: var(--color-slate-blue);
+    max-width: 56ch;
+  }
+
+  .work__more {
+    display: inline-block;
+    margin-top: 2.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-charcoal);
+    border-bottom: 1px solid var(--color-charcoal);
+    padding-bottom: 2px;
+  }
+</style>

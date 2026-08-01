@@ -1,0 +1,130 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const allServices = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+const groups = ['Visibility & marketing', 'AI solutions'].map((label) => ({
+  label,
+  items: allServices.filter((s) => s.data.group === label),
+}));
+---
+
+<Layout
+  title="Services"
+  description="SEO, websites, branding, advertising, and practical AI tools for UK local businesses — bespoke to each client, not sold as a fixed package."
+>
+  <section class="services-hero">
+    <div class="container">
+      <span class="eyebrow">Services</span>
+      <h1 class="services-hero__heading">Everything a local business needs to grow, done properly.</h1>
+      <p class="services-hero__text">
+        Every service below can stand alone or work together as part of a plan — see
+        <a href="/pricing">pricing</a> for how they're packaged.
+      </p>
+    </div>
+  </section>
+
+  <section class="services-list">
+    <div class="container">
+      {groups.map((group) => (
+        <div class="services-list__group">
+          <p class="services-list__label">{group.label}</p>
+          <div class="services-list__items">
+            {group.items.map((item) => (
+              <a href={`/services/${item.id}`} class="services-list__item">
+                <h2 class="services-list__title">{item.data.title}</h2>
+                <p class="services-list__summary">{item.data.summary}</p>
+                <span class="services-list__link">Learn more &rarr;</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .services-hero {
+    padding-block: clamp(4rem, 10vw, 7rem) clamp(2.5rem, 6vw, 4rem);
+  }
+
+  .services-hero__heading {
+    font-size: var(--step-3xl);
+    max-width: 18ch;
+    margin-top: 0.75rem;
+  }
+
+  .services-hero__text {
+    color: var(--color-slate-blue);
+    font-size: var(--step-lg);
+    max-width: 50ch;
+    margin-top: 1.25rem;
+  }
+
+  .services-hero__text a {
+    color: var(--color-accent-strong);
+  }
+
+  .services-list {
+    padding-block: 0 var(--section-padding);
+  }
+
+  .services-list__group {
+    margin-bottom: 3rem;
+  }
+
+  .services-list__label {
+    font-size: var(--step-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-accent-strong);
+    margin-bottom: 1.5rem;
+  }
+
+  .services-list__items {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .services-list__item {
+    display: block;
+    text-decoration: none;
+    color: var(--color-text);
+    background: var(--color-white);
+    border: 1px solid var(--color-light-grey);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    transition:
+      border-color 0.3s var(--ease-out),
+      transform 0.3s var(--ease-out);
+  }
+
+  .services-list__item:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-3px);
+  }
+
+  .services-list__title {
+    font-size: var(--step-lg);
+    margin-bottom: 0.5rem;
+  }
+
+  .services-list__summary {
+    color: var(--color-slate-blue);
+    margin-bottom: 1rem;
+  }
+
+  .services-list__link {
+    font-weight: 600;
+    font-size: var(--step-sm);
+    color: var(--color-accent-strong);
+  }
+
+  @media (min-width: 800px) {
+    .services-list__items {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

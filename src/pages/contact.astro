@@ -1,0 +1,231 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import siteSettings from '../data/site-settings.json';
+
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout
+  title="Contact"
+  description="Get in touch with Amplivate for a free strategy call — UK-wide digital marketing and AI automation for local businesses."
+>
+  <section class="contact-hero" id="strategy-call">
+    <div class="container">
+      <span class="eyebrow">Contact</span>
+      <h1 class="contact-hero__heading">Let's grow your business together.</h1>
+      <p class="contact-hero__text">
+        Book a free strategy call, or send a message below — no pressure, no scripted pitch.
+      </p>
+    </div>
+  </section>
+
+  <section class="contact-body">
+    <div class="container contact-body__grid">
+      <form class="contact-form" id="contact-form">
+        <div class="contact-form__honeypot" aria-hidden="true">
+          <label for="_gotcha">Leave this field blank</label>
+          <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div class="contact-form__row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="contact-form__row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="contact-form__row">
+          <label for="business">Business name</label>
+          <input type="text" id="business" name="business" />
+        </div>
+
+        <div class="contact-form__row">
+          <label for="service">What are you enquiring about?</label>
+          <select id="service" name="service">
+            <option value="">General enquiry</option>
+            {services.map((s) => <option value={s.data.title}>{s.data.title}</option>)}
+          </select>
+        </div>
+
+        <div class="contact-form__row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="button button--primary">Send Message</button>
+        <p class="contact-form__status" id="contact-form-status" role="status"></p>
+      </form>
+
+      <div class="contact-info">
+        <div class="contact-info__block">
+          <p class="contact-info__label">Email</p>
+          <a href={`mailto:${siteSettings.email}`}>{siteSettings.email}</a>
+        </div>
+
+        <div class="contact-info__block">
+          <p class="contact-info__label">Coverage</p>
+          <p>{siteSettings.region}</p>
+        </div>
+
+        <div class="contact-info__block">
+          <p class="contact-info__label">Response time</p>
+          <p>We aim to reply within one working day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .contact-hero {
+    padding-block: clamp(4rem, 10vw, 7rem) clamp(2.5rem, 6vw, 4rem);
+    scroll-margin-top: 100px;
+  }
+
+  .contact-hero__heading {
+    font-size: var(--step-3xl);
+    max-width: 20ch;
+    margin-top: 0.75rem;
+  }
+
+  .contact-hero__text {
+    color: var(--color-slate-blue);
+    font-size: var(--step-lg);
+    margin-top: 1.25rem;
+  }
+
+  .contact-body {
+    padding-block: 0 var(--section-padding);
+  }
+
+  .contact-body__grid {
+    display: grid;
+    gap: 3rem;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .contact-form__honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .contact-form__row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .contact-form label {
+    font-weight: 600;
+    font-size: var(--step-sm);
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-family: var(--font-body);
+    font-size: var(--step-base);
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--color-silver);
+    border-radius: var(--radius-sm);
+    background: var(--color-white);
+    color: var(--color-text);
+  }
+
+  .contact-form input:focus,
+  .contact-form select:focus,
+  .contact-form textarea:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 1px;
+  }
+
+  .contact-form button {
+    align-self: flex-start;
+  }
+
+  .contact-form__status {
+    font-size: var(--step-sm);
+    color: var(--color-accent-strong);
+    min-height: 1.2em;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    padding: 2rem;
+    background: var(--color-bg-subtle);
+    border-radius: var(--radius-lg);
+    height: fit-content;
+  }
+
+  .contact-info__label {
+    font-size: var(--step-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-accent-strong);
+    margin-bottom: 0.4rem;
+  }
+
+  .contact-info__block a {
+    color: var(--color-text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-silver);
+  }
+
+  @media (min-width: 900px) {
+    .contact-body__grid {
+      grid-template-columns: 1.4fr 1fr;
+    }
+  }
+</style>
+
+<script>
+  // Update once the worker is deployed (step 3 in the README) — this is
+  // the *.workers.dev URL wrangler prints, or a custom route if you set one.
+  const WORKER_URL = 'https://amplivate-contact-form.YOUR_SUBDOMAIN.workers.dev';
+
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const status = document.getElementById('contact-form-status');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!status) return;
+
+    const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    submitButton?.setAttribute('disabled', 'true');
+    status.textContent = 'Sending…';
+
+    try {
+      const res = await fetch(WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) throw new Error('Request failed');
+
+      status.textContent = "Thanks — we'll get back to you within one working day.";
+      form.reset();
+    } catch {
+      status.textContent = 'Something went wrong sending that. Please try emailing us directly instead.';
+    } finally {
+      submitButton?.removeAttribute('disabled');
+    }
+  });
+</script>

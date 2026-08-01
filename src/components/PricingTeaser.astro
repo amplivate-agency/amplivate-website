@@ -1,0 +1,57 @@
+---
+import { getCollection } from 'astro:content';
+import PricingCards from './PricingCards.astro';
+import home from '../data/home.json';
+
+const tiers = (await getCollection('pricingTiers'))
+  .sort((a, b) => a.data.order - b.data.order)
+  .map((t) => t.data);
+---
+
+<section class="pricing-teaser">
+  <div class="container">
+    <div class="pricing-teaser__header">
+      <span class="eyebrow">{home.pricing.eyebrow}</span>
+      <h2 class="pricing-teaser__heading">{home.pricing.heading}</h2>
+      <p class="pricing-teaser__text">{home.pricing.text}</p>
+    </div>
+
+    <PricingCards tiers={tiers} />
+
+    <a href="/pricing" class="pricing-teaser__compare">Compare plans in detail &rarr;</a>
+  </div>
+</section>
+
+<style>
+  .pricing-teaser {
+    padding-block: var(--section-padding);
+    background: var(--color-bg-subtle);
+  }
+
+  .pricing-teaser__header {
+    max-width: 560px;
+    margin-bottom: 3rem;
+  }
+
+  .pricing-teaser__heading {
+    font-size: var(--step-2xl);
+    margin-block: 0.75rem 1rem;
+  }
+
+  .pricing-teaser__text {
+    color: var(--color-slate-blue);
+  }
+
+  .pricing-teaser__compare {
+    display: block;
+    text-align: center;
+    margin-top: 3rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-charcoal);
+    border-bottom: 1px solid var(--color-charcoal);
+    padding-bottom: 2px;
+    width: fit-content;
+    margin-inline: auto;
+  }
+</style>

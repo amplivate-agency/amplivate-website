@@ -1,0 +1,222 @@
+---
+import home from '../data/home.json';
+const { hero } = home;
+---
+
+<section class="hero">
+  <canvas class="hero__canvas" id="hero-canvas" aria-hidden="true"></canvas>
+
+  <div class="container hero__inner">
+    <img src="/images/logo.webp" alt="Amplivate" class="hero__logo" width="56" height="56" />
+    <h1 class="hero__headline">{hero.headline}</h1>
+    <p class="hero__subhead">{hero.subhead}</p>
+    <div class="hero__actions">
+      <a href={hero.ctaPrimaryHref} class="button button--primary">{hero.ctaPrimaryLabel}</a>
+      <a href={hero.ctaSecondaryHref} class="button button--secondary">{hero.ctaSecondaryLabel}</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(5rem, 12vw, 9rem) clamp(4rem, 10vw, 7rem);
+    background: var(--color-white);
+  }
+
+  .hero__canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 920px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.75rem;
+  }
+
+  .hero__logo {
+    opacity: 0;
+    animation: hero-fade-in 0.8s var(--ease-out) 0.1s forwards;
+  }
+
+  .hero__headline {
+    font-size: var(--step-3xl);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    max-width: 20ch;
+    opacity: 0;
+    animation: hero-fade-in 0.8s var(--ease-out) 0.25s forwards;
+  }
+
+  .hero__subhead {
+    font-size: var(--step-lg);
+    color: var(--color-slate-blue);
+    max-width: 60ch;
+    opacity: 0;
+    animation: hero-fade-in 0.8s var(--ease-out) 0.4s forwards;
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    opacity: 0;
+    animation: hero-fade-in 0.8s var(--ease-out) 0.55s forwards;
+  }
+
+  @keyframes hero-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero__logo,
+    .hero__headline,
+    .hero__subhead,
+    .hero__actions {
+      animation: none;
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  const canvas = document.getElementById('hero-canvas') as HTMLCanvasElement | null;
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let width = 0;
+    let height = 0;
+    let dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let points: { x: number; y: number; vx: number; vy: number }[] = [];
+    let animating = false;
+    let hasStartedOnce = false;
+    let rafId: number | null = null;
+
+    const STEEL_BLUE = '100, 124, 153';
+    const POINT_COUNT = 16;
+    const LINK_DISTANCE = 190;
+
+    function resize() {
+      if (!canvas) return;
+      const rect = canvas.parentElement!.getBoundingClientRect();
+      width = rect.width;
+      height = rect.height;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      ctx?.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function seed() {
+      points = Array.from({ length: POINT_COUNT }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.15,
+        vy: (Math.random() - 0.5) * 0.15,
+      }));
+    }
+
+    function draw() {
+      if (!ctx) return;
+      ctx.clearRect(0, 0, width, height);
+
+      for (const p of points) {
+        if (!prefersReducedMotion) {
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+        }
+      }
+
+      for (let i = 0; i < points.length; i++) {
+        for (let j = i + 1; j < points.length; j++) {
+          const a = points[i];
+          const b = points[j];
+          const dist = Math.hypot(a.x - b.x, a.y - b.y);
+          if (dist < LINK_DISTANCE) {
+            const alpha = (1 - dist / LINK_DISTANCE) * 0.35;
+            ctx.strokeStyle = `rgba(${STEEL_BLUE}, ${alpha})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      for (const p of points) {
+        ctx.fillStyle = `rgba(${STEEL_BLUE}, 0.55)`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      if (!prefersReducedMotion && animating) {
+        rafId = requestAnimationFrame(draw);
+      }
+    }
+
+    function start() {
+      if (hasStartedOnce) return;
+      hasStartedOnce = true;
+      animating = true;
+      draw();
+      if (prefersReducedMotion) {
+        animating = false;
+      }
+    }
+
+    function stop() {
+      animating = false;
+      if (rafId) cancelAnimationFrame(rafId);
+    }
+
+    resize();
+    seed();
+    draw();
+
+    window.addEventListener('resize', () => {
+      resize();
+    });
+
+    // Ambient network stays still until the visitor actually starts scrolling —
+    // the hero itself is quiet; motion is something you discover, not something
+    // thrown at you on load.
+    window.addEventListener('scroll', start, { once: true, passive: true });
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting && hasStartedOnce) {
+            animating = true;
+            draw();
+          } else {
+            stop();
+          }
+        }
+      },
+      { threshold: 0.1 },
+    );
+    io.observe(canvas);
+  }
+</script>

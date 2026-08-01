@@ -1,0 +1,260 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map((service) => ({
+    params: { id: service.id },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+const { title, summary, overview, benefits, whatsIncluded, process, faqs } = service.data;
+---
+
+<Layout title={title} description={summary}>
+  <section class="service-hero">
+    <div class="container">
+      <span class="eyebrow"><a href="/services">Services</a></span>
+      <h1 class="service-hero__heading">{title}</h1>
+      <p class="service-hero__summary">{summary}</p>
+      <a href="/contact#strategy-call" class="button button--primary">Book a Free Strategy Call</a>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="container service-section__inner">
+      <h2>Overview</h2>
+      <p>{overview}</p>
+    </div>
+  </section>
+
+  <section class="service-section service-section--subtle">
+    <div class="container">
+      <h2>Benefits</h2>
+      <ul class="service-list">
+        {benefits.map((b) => <li>{b}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="container">
+      <h2>What's included</h2>
+      <ul class="service-list">
+        {whatsIncluded.map((w) => <li>{w}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="service-section service-section--subtle">
+    <div class="container">
+      <h2>Process</h2>
+      <div class="service-process">
+        {process.map((step, i) => (
+          <div class="service-process__step">
+            <span class="service-process__index">{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <p class="service-process__title">{step.title}</p>
+              <p class="service-process__text">{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="container service-section__inner">
+      <h2>FAQs</h2>
+      <div class="service-faqs">
+        {faqs.map((faq) => (
+          <details class="service-faqs__item">
+            <summary>{faq.question}</summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="service-cta">
+    <div class="container service-cta__inner">
+      <h2>Ready to talk about {title}?</h2>
+      <div class="service-cta__actions">
+        <a href="/contact#strategy-call" class="button button--primary">Book a Free Strategy Call</a>
+        <a href="/services" class="button button--secondary">View All Services</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .service-hero {
+    padding-block: clamp(4rem, 10vw, 7rem) clamp(2.5rem, 6vw, 4rem);
+  }
+
+  .service-hero .eyebrow a {
+    text-decoration: none;
+    color: var(--color-accent-strong);
+  }
+
+  .service-hero__heading {
+    font-size: var(--step-3xl);
+    max-width: 18ch;
+    margin-top: 0.75rem;
+  }
+
+  .service-hero__summary {
+    color: var(--color-slate-blue);
+    font-size: var(--step-lg);
+    max-width: 50ch;
+    margin-block: 1.25rem 2rem;
+  }
+
+  .service-section {
+    padding-block: clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  .service-section--subtle {
+    background: var(--color-bg-subtle);
+  }
+
+  .service-section__inner {
+    max-width: 720px;
+  }
+
+  .service-section h2 {
+    font-size: var(--step-xl);
+    margin-bottom: 1.25rem;
+  }
+
+  .service-section p {
+    color: var(--color-slate-blue);
+    font-size: var(--step-lg);
+  }
+
+  .service-list {
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+    max-width: 720px;
+  }
+
+  .service-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    color: var(--color-slate-blue);
+    font-size: var(--step-base);
+  }
+
+  .service-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+
+  .service-process {
+    display: grid;
+    gap: 2rem;
+    max-width: 720px;
+  }
+
+  .service-process__step {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .service-process__index {
+    font-family: var(--font-heading);
+    font-size: var(--step-xl);
+    color: var(--color-silver);
+    flex-shrink: 0;
+  }
+
+  .service-process__title {
+    font-family: var(--font-heading);
+    font-size: var(--step-lg);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .service-process__text {
+    color: var(--color-slate-blue);
+  }
+
+  .service-faqs {
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-faqs__item {
+    border-top: 1px solid var(--color-light-grey);
+    padding-block: 1.25rem;
+  }
+
+  .service-faqs__item:last-child {
+    border-bottom: 1px solid var(--color-light-grey);
+  }
+
+  .service-faqs__item summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: var(--step-base);
+    list-style: none;
+  }
+
+  .service-faqs__item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .service-faqs__item summary::after {
+    content: '+';
+    float: right;
+    color: var(--color-accent-strong);
+  }
+
+  .service-faqs__item[open] summary::after {
+    content: '−';
+  }
+
+  .service-faqs__item p {
+    color: var(--color-slate-blue);
+    margin-top: 0.75rem;
+  }
+
+  .service-cta {
+    padding-block: var(--section-padding);
+    background: var(--color-charcoal);
+    color: var(--color-white);
+    text-align: center;
+  }
+
+  .service-cta__inner h2 {
+    font-size: var(--step-2xl);
+    color: var(--color-white);
+    margin-bottom: 2rem;
+    max-width: 20ch;
+    margin-inline: auto;
+  }
+
+  .service-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .service-cta .button--secondary {
+    color: var(--color-white);
+    border-color: var(--color-silver);
+  }
+</style>
