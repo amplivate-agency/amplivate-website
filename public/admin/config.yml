@@ -1,12 +1,11 @@
 # Same pattern as blindspot-agency: Decap's "github" backend, fronted by a
 # self-hosted Cloudflare Worker OAuth proxy (see /cms-oauth-worker) instead
-# of Netlify Identity. base_url still needs updating once the worker is
-# deployed — see the deploy notes in README.md.
+# of Netlify Identity.
 backend:
   name: github
   repo: amplivate-agency/amplivate-website
   branch: main
-  base_url: https://amplivate-cms-auth.YOUR_SUBDOMAIN.workers.dev
+  base_url: https://amplivate-cms-auth.amplivate.workers.dev
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
