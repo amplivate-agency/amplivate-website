@@ -45,9 +45,21 @@ const navItems = [
     position: sticky;
     top: 0;
     z-index: 50;
+    border-bottom: 1px solid var(--color-light-grey);
+  }
+
+  /* backdrop-filter lives on this pseudo-element rather than directly on
+     .site-header — putting it on the header itself would make it a
+     "containing block" for the fixed-position mobile nav below, which
+     confines position:fixed to the header's own small box instead of the
+     viewport. Keeping it off the real element sidesteps that entirely. */
+  .site-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
     background: color-mix(in srgb, var(--color-white) 88%, transparent);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--color-light-grey);
   }
 
   .site-header__inner {
@@ -111,7 +123,7 @@ const navItems = [
     list-style: none;
   }
 
-  .site-header__nav a {
+  .site-header__nav ul a {
     text-decoration: none;
     font-weight: 600;
     font-size: var(--step-lg);
@@ -174,12 +186,12 @@ const navItems = [
       gap: 2rem;
     }
 
-    .site-header__nav a {
+    .site-header__nav ul a {
       font-size: var(--step-sm);
       font-family: var(--font-body);
     }
 
-    .site-header__nav a::after {
+    .site-header__nav ul a::after {
       content: '';
       position: absolute;
       left: 0;
@@ -190,7 +202,7 @@ const navItems = [
       transition: width 0.3s var(--ease-out);
     }
 
-    .site-header__nav a:hover::after {
+    .site-header__nav ul a:hover::after {
       width: 100%;
     }
 
