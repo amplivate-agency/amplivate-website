@@ -1,13 +1,13 @@
 {
   "items": [
     {
-      "ctaLabel": "Inquire now",
-      "price": "Get your quote today",
+      "ctaLabel": "Get started ",
+      "price": "Best for getting started",
       "name": "Foundation",
       "tagline": "Ideal for businesses establishing their online presence.",
       "order": 1,
-      "priceNote": "Tailored to you",
-      "id": "Foundation",
+      "priceNote": "Your foundation built right ",
+      "id": "foundation",
       "ctaHref": "/contact",
       "features": [
         "Local SEO",
@@ -16,12 +16,12 @@
       ]
     },
     {
-      "ctaLabel": "Inquire now",
-      "price": "Get your quote today",
+      "ctaLabel": "Get started",
+      "price": "Most popular for growing businesses ",
       "name": "Ascent",
       "tagline": "Ideal for growing businesses wanting more visibility.",
       "order": 2,
-      "priceNote": "Tailored to you",
+      "priceNote": "Built to grow with you",
       "id": "Ascent",
       "ctaHref": "/contact",
       "features": [
@@ -34,12 +34,12 @@
       ]
     },
     {
-      "ctaLabel": "Inquire now",
-      "price": "Get your quote today",
+      "ctaLabel": "Get started ",
+      "price": "For businesses ready to scale fast",
       "name": "Summit",
-      "tagline": "Ideal for businesses wanting maximum growth.",
+      "tagline": "Ideal for businesses wanting to leave competitors behind.",
       "order": 3,
-      "priceNote": "Tailored to you",
+      "priceNote": "Maximum growth maximum support",
       "id": "Summit",
       "ctaHref": "/contact",
       "features": [
