@@ -1,37 +1,58 @@
 {
   "items": [
     {
-      "id": "starter",
-      "order": 1,
-      "name": "Starter",
-      "price": "£299",
-      "priceNote": "/month",
+      "ctaLabel": "Inquire now",
+      "price": "Get your quote today",
+      "name": "Foundation",
       "tagline": "Ideal for businesses establishing their online presence.",
-      "features": ["Local SEO", "Google Business Profile Optimisation", "Monthly Reporting"],
-      "ctaLabel": "Get Started",
-      "ctaHref": "/contact"
+      "order": 1,
+      "priceNote": "Tailored to you",
+      "id": "Foundation",
+      "ctaHref": "/contact",
+      "features": [
+        "Local SEO",
+        "Google Business Profile Optimisation",
+        "Monthly Reporting"
+      ]
     },
     {
-      "id": "growth",
-      "order": 2,
-      "name": "Growth",
-      "price": "£499",
-      "priceNote": "/month",
+      "ctaLabel": "Inquire now",
+      "price": "Get your quote today",
+      "name": "Ascent",
       "tagline": "Ideal for growing businesses wanting more visibility.",
-      "features": ["Local SEO", "Google Business Profile Optimisation", "Monthly Reporting", "Blog Content", "Local Citations", "Website Updates"],
-      "ctaLabel": "Get Started",
-      "ctaHref": "/contact"
+      "order": 2,
+      "priceNote": "Tailored to you",
+      "id": "Ascent",
+      "ctaHref": "/contact",
+      "features": [
+        "Local SEO",
+        "Google Business Profile Optimisation",
+        "Monthly Reporting",
+        "Blog Content",
+        "Local Citations",
+        "Website Updates"
+      ]
     },
     {
-      "id": "elite",
-      "order": 3,
-      "name": "Elite",
-      "price": "£799",
-      "priceNote": "/month",
+      "ctaLabel": "Inquire now",
+      "price": "Get your quote today",
+      "name": "Summit",
       "tagline": "Ideal for businesses wanting maximum growth.",
-      "features": ["Local SEO", "Google Business Profile Optimisation", "Monthly Reporting", "Blog Content", "Local Citations", "Website Updates", "AI Content", "Conversion Optimisation", "Priority Support"],
-      "ctaLabel": "Get Started",
-      "ctaHref": "/contact"
+      "order": 3,
+      "priceNote": "Tailored to you",
+      "id": "Summit",
+      "ctaHref": "/contact",
+      "features": [
+        "Local SEO",
+        "Google Business Profile Optimisation",
+        "Monthly Reporting",
+        "Blog Content",
+        "Local Citations",
+        "Website Updates",
+        "AI Content",
+        "Conversion Optimisation",
+        "Priority Support"
+      ]
     }
   ]
 }
