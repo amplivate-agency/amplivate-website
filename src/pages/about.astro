@@ -21,6 +21,20 @@ import about from '../data/about.json';
     </div>
   </section>
 
+  <section class="about-founder">
+    <div class="container about-founder__inner">
+      {about.founder.photo && (
+        <img class="about-founder__photo" src={about.founder.photo} alt={about.founder.name} width="160" height="160" />
+      )}
+      <div class="about-founder__content">
+        <span class="eyebrow">Meet the founder</span>
+        <p class="about-founder__name">{about.founder.name}</p>
+        <p class="about-founder__role">{about.founder.role}</p>
+        <p class="about-founder__bio">{about.founder.bio}</p>
+      </div>
+    </div>
+  </section>
+
   <section class="about-block about-block--subtle">
     <div class="container about-block__inner">
       <h2>Our mission</h2>
@@ -102,6 +116,52 @@ import about from '../data/about.json';
   .about-block p {
     color: var(--color-slate-blue);
     font-size: var(--step-lg);
+  }
+
+  .about-founder {
+    padding-block: clamp(2.5rem, 5vw, 3.5rem);
+    background: var(--color-bg-subtle);
+  }
+
+  .about-founder__inner {
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .about-founder__photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .about-founder__name {
+    font-family: var(--font-heading);
+    font-size: var(--step-lg);
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+
+  .about-founder__role {
+    color: var(--color-accent-strong);
+    font-size: var(--step-sm);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .about-founder__bio {
+    color: var(--color-slate-blue);
+  }
+
+  @media (min-width: 600px) {
+    .about-founder__inner {
+      flex-direction: row;
+      align-items: center;
+    }
   }
 
   .about-values {

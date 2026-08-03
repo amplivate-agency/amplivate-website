@@ -16,6 +16,12 @@
       "text": "You deal directly with the person doing the work."
     }
   ],
+  "founder": {
+    "name": "[Founder name]",
+    "role": "Founder & Managing Director",
+    "photo": "",
+    "bio": "[Add a short founder bio here — background, why they started Amplivate, and what they focus on day to day. Editable in the admin under Page content → About page → Founder.]"
+  },
   "whatMakesDifferent": "Most agencies scale by adding account managers between you and the work. Amplivate is built to stay small on purpose — every client works directly with the person actually running their campaigns, writing their site, and managing their ads.",
   "howWeHelp": "Through the work that actually moves the needle for local businesses — search visibility, a Google Business Profile that converts, a website built to sell, and advertising managed properly — plus practical AI tools that handle repetitive follow-up so nothing falls through the cracks.",
   "vision": "As Amplivate grows, so does this: a client dashboard for real-time reporting, AI tools clients can manage themselves, and resources for local businesses trying to understand their own marketing. Added because it's useful, not because it looks impressive."

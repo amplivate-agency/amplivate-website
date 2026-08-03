@@ -249,6 +249,14 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Text", name: "text", widget: "text" }
+          - label: "Founder"
+            name: "founder"
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role / title", name: "role", widget: "string" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+              - { label: "Bio", name: "bio", widget: "text" }
           - { label: "What makes us different", name: "whatMakesDifferent", widget: "text" }
           - { label: "How we help businesses grow", name: "howWeHelp", widget: "text" }
           - { label: "Vision for the future", name: "vision", widget: "text" }
