@@ -16,12 +16,12 @@ const allFeatures = tiers[tiers.length - 1].features;
 ---
 
 <Layout
-  title="Pricing"
+  title="Plans"
   description="Three fixed monthly plans for UK local businesses, plus add-ons like AI review automation, chatbots, and Google Ads management."
 >
   <section class="pricing-hero">
     <div class="container">
-      <span class="eyebrow">Pricing</span>
+      <span class="eyebrow">Plans</span>
       <h1 class="pricing-hero__heading">Three plans, no surprises.</h1>
       <p class="pricing-hero__text">
         Fixed monthly pricing based on what your business actually needs. No long contracts,
@@ -64,12 +64,6 @@ const allFeatures = tiers[tiers.length - 1].features;
                 ))}
               </tr>
             ))}
-            <tr>
-              <th scope="row">Price</th>
-              {tiers.map((tier) => (
-                <td class="pricing-compare__price">{tier.price}{tier.priceNote}</td>
-              ))}
-            </tr>
           </tbody>
         </table>
       </div>
@@ -185,10 +179,6 @@ const allFeatures = tiers[tiers.length - 1].features;
 
   .pricing-compare__dash {
     color: var(--color-silver);
-  }
-
-  .pricing-compare__price {
-    font-weight: 700;
   }
 
   .addons {
