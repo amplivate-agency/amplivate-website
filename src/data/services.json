@@ -66,9 +66,9 @@
           "description": "Volume and sentiment are tracked monthly, with negative feedback flagged privately first."
         }
       ],
-      "title": "Google review follow up ",
+      "title": "Google Review Follow Up ",
       "overview": "Most happy customers never leave a review, not because they don't want to, but because nobody asked them at the right time. We set up automatic, on-brand follow-up that asks at the right moment — without sounding like a robot.",
-      "id": "Google-review-follow-up",
+      "id": "google-review-follow-up",
       "benefits": [
         "More reviews from customers who were already happy",
         "Follow-up that happens automatically, with no manual chasing",
@@ -109,7 +109,7 @@
           "description": "Once it's live, we show you how to update it yourself — no waiting on a developer for small changes."
         }
       ],
-      "title": "Website Design & Landing page Build ",
+      "title": "Website Design & Landing Page Build ",
       "overview": "A website that looks nice but doesn't generate enquiries isn't doing its job. We design sites around what a visitor actually needs to see to pick up the phone or fill in a form — built properly, not from a generic template.",
       "id": "website-design",
       "benefits": [
@@ -204,9 +204,9 @@
           "description": "Monthly check-in on performance and next steps "
         }
       ],
-      "title": "Social media management ",
+      "title": "Social Media Management ",
       "overview": "Your business shows up on social media even when you’re not posting. We take that over — planning, creating, and publishing content that keeps your profiles active and on-brand, so social media stops being another thing on your to-do list.",
-      "id": "Social-media-management ",
+      "id": "social-media-management ",
       "benefits": [
         "Consistent posting",
         "on-brand content",
@@ -225,6 +225,14 @@
         }
       ],
       "group": "Visibility & marketing"
+    },
+    {
+      "title": "Missed-Call Text Back ",
+      "id": "missed-call-text-back ",
+      "order": 2,
+      "group": "AI solutions",
+      "overview": "Never lose a job to a missed call. The second a call goes unanswered, your customer gets an instant text back with a way to book, so the enquiry doesn't go to a competitor.",
+      "summary": "Automation that follows up missed calls for you when you can’t get to the phone. "
     }
   ]
 }
