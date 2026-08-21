@@ -66,9 +66,9 @@
           "description": "Volume and sentiment are tracked monthly, with negative feedback flagged privately first."
         }
       ],
-      "title": "AI Google Review Automation",
+      "title": "Google review follow up ",
       "overview": "Most happy customers never leave a review, not because they don't want to, but because nobody asked them at the right time. We set up automatic, on-brand follow-up that asks at the right moment — without sounding like a robot.",
-      "id": "ai-review-automation",
+      "id": "Google-review-follow-up",
       "benefits": [
         "More reviews from customers who were already happy",
         "Follow-up that happens automatically, with no manual chasing",
