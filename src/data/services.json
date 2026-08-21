@@ -227,12 +227,51 @@
       "group": "Visibility & marketing"
     },
     {
-      "title": "Missed-Call Text Back ",
-      "id": "missed-call-text-back ",
+      "summary": "Automation that follows up missed calls for you when you can’t get to the phone. ",
+      "whatsIncluded": [
+        "Auto text-back",
+        "custom message",
+        "lead capture",
+        "monthly reporting."
+      ],
       "order": 2,
-      "group": "AI solutions",
+      "process": [
+        {
+          "title": "Setup",
+          "description": "We connect the service to your business number"
+        },
+        {
+          "title": "Customise ",
+          "description": "You approve the text message template"
+        },
+        {
+          "title": "Go live ",
+          "description": "Missed calls trigger and instant text automatically "
+        },
+        {
+          "title": "Review ",
+          "description": "Monthly reports shows leads recovered "
+        }
+      ],
+      "title": "Missed-Call Text Back ",
       "overview": "Never lose a job to a missed call. The second a call goes unanswered, your customer gets an instant text back with a way to book, so the enquiry doesn't go to a competitor.",
-      "summary": "Automation that follows up missed calls for you when you can’t get to the phone. "
+      "id": "missed-call-text-back ",
+      "benefits": [
+        "Fewer lost leads",
+        "instant response",
+        "no extra effort."
+      ],
+      "faqs": [
+        {
+          "question": "What does the customer receive when I miss their call?",
+          "answer": "An instant text letting them know you’ll be in touch, with an option to leave details or book in directly."
+        },
+        {
+          "question": "Does this work with my existing business number?",
+          "answer": "Yes, it connects to the number you already use, so there’s nothing new for customers to learn."
+        }
+      ],
+      "group": "AI solutions"
     }
   ]
 }
