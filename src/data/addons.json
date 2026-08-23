@@ -1,19 +1,6 @@
 {
   "items": [
     {
-      "id": "ai-review-system",
-      "order": 1,
-      "name": "AI Google Review Follow-up System",
-      "whatItDoes": "Automatically follows up with customers after a job or purchase, asking happy customers to leave a review at the right moment — and routing unhappy ones to you privately first.",
-      "whyValuable": "Most satisfied customers never leave a review simply because nobody asked at the right time. This closes that gap without you having to chase anyone manually.",
-      "price": "From £49/month",
-      "benefits": [
-        "More reviews from customers who were already happy",
-        "No manual chasing required",
-        "Negative feedback caught before it goes public"
-      ]
-    },
-    {
       "id": "ai-website-chatbot",
       "order": 2,
       "name": "AI Website Chatbot",
@@ -37,19 +24,6 @@
         "Campaigns targeted at people ready to buy",
         "Full visibility into where your budget goes",
         "Ongoing optimisation, not a set-and-forget campaign"
-      ]
-    },
-    {
-      "id": "website-design",
-      "order": 4,
-      "name": "Website Design",
-      "whatItDoes": "A custom-built, mobile-first website designed around what your customers need to see to actually get in touch.",
-      "whyValuable": "A site that looks fine but doesn't convert is costing you enquiries every day it's live.",
-      "price": "Custom quote, based on project scope",
-      "benefits": [
-        "Built around your business, not a template",
-        "Fast, mobile-first, and easy to update yourself",
-        "A foundation that makes every other service work harder"
       ]
     },
     {
