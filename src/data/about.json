@@ -1,6 +1,6 @@
 {
   "heading": "An agency, built the way we'd want to hire one.",
-  "whyExists": "Too often we see local business marketing sold as a package instead of built as a strategy — the same SEO checklist, the same templated website, the same generic ad campaign, regardless of what the business actually needs. Amplivate exists to do it differently: work built around the business in front of us, priced fairly, and reported on honestly.",
+  "whyExists": "Too often we see local business marketing sold as a package instead of built as a strategy — the same SEO checklist, the same templated website, the same generic ad campaign, regardless of what the business needs. Amplivate exists to do it differently: work built around the business in front of us, priced fairly, and reported on honestly.",
   "mission": "To give local UK businesses access to the kind of strategic, bespoke marketing usually reserved for companies with much bigger budgets — without the bloated retainers or the corporate fluff",
   "values": [
     {
@@ -17,12 +17,12 @@
     }
   ],
   "founder": {
-    "name": "[Founder name]",
+    "name": "Charlie Robinson",
     "role": "Founder & Managing Director",
     "photo": "",
-    "bio": "[Add a short founder bio here — background, why they started Amplivate, and what they focus on day to day. Editable in the admin under Page content → About page → Founder.]"
+    "bio": "Before starting Amplivate, I spent years working inside local businesses and saw the same thing over and over: processes that could run smoother, and marketing that wasn't earning its keep. Amplivate is what I wished had existed back then — straightforward work from someone who still picks up the phone."
   },
-  "whatMakesDifferent": "Most agencies scale by adding account managers between you and the work. Amplivate is built to stay small on purpose — every client works directly with the person actually running their campaigns, writing their site, and managing their ads.",
-  "howWeHelp": "Through the work that actually moves the needle for local businesses — search visibility, a Google Business Profile that converts, a website built to sell, and advertising managed properly — plus practical AI tools that handle repetitive follow-up so nothing falls through the cracks.",
+  "whatMakesDifferent": "Most agencies scale by adding account managers between you and the work. Amplivate is built to stay small on purpose — every client works directly with the person running their campaigns, writing their site, and managing their ads.",
+  "howWeHelp": "Through the work that moves the needle for local businesses — search visibility, a Google Business Profile that converts, a website built to sell, and advertising managed properly — plus practical AI tools that handle repetitive follow-up so nothing falls through the cracks.",
   "vision": "As Amplivate grows, so does this: a client dashboard for real-time reporting, AI tools clients can manage themselves, and resources for local businesses trying to understand their own marketing. Added because it's useful, not because it looks impressive."
 }

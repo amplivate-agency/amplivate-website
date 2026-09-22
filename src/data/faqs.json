@@ -19,7 +19,7 @@
       "order": 3,
       "category": "Timelines",
       "question": "How quickly will I see results?",
-      "answer": "It depends on the service — SEO typically takes 8–12 weeks to show movement, while a new website or ad campaign can start generating enquiries within days of going live."
+      "answer": "Results vary by service. SEO is a longer-term investment that builds over weeks and months rather than overnight, while a new website or ad campaign can start generating enquiries much sooner after going live."
     },
     {
       "id": "reporting",
@@ -39,21 +39,21 @@
       "id": "pricing-hidden-fees",
       "order": 6,
       "category": "Pricing",
-      "question": "Are there any hidden fees on top of the monthly plan?",
-      "answer": "No. The only additional cost is ad spend if you're running Google Ads, and that goes straight to Google, not to us. Everything else is covered in your fixed monthly price."
+      "question": "Are there any hidden fees on top of what you quote me?",
+      "answer": "No. The only additional cost is ad spend if you're running Google Ads, and that goes straight to Google, not to us."
     },
     {
       "id": "contracts",
       "order": 7,
       "category": "Contracts",
       "question": "Am I locked into a long contract?",
-      "answer": "No — our plans run monthly with no long-term tie-in. We'd rather earn your business every month than lock you into a contract."
+      "answer": "No — our work runs on a monthly rolling basis with no long-term tie-in. We'd rather earn your business every month than lock you into a contract."
     },
     {
       "id": "support",
       "order": 8,
       "category": "Support",
-      "question": "Who do I actually speak to if I have a question?",
+      "question": "Who do I speak to if I have a question?",
       "answer": "The person doing the work — not a call centre or a rotating account manager. Direct access is part of how we operate."
     }
   ]

@@ -3,14 +3,14 @@
     {
       "id": "local-seo",
       "order": 1,
-      "group": "Visibility & marketing",
+      "group": "Visibility & Marketing",
       "title": "Local SEO",
-      "summary": "Rank higher for the searches that actually bring customers through the door.",
-      "overview": "Local SEO is about showing up when someone nearby searches for what you do — not ranking for keywords that look impressive but never convert. We focus on the searches that lead to calls, bookings, and footfall.",
+      "summary": "Rank higher for the searches that bring customers through the door.",
+      "overview": "We optimise your website and on-page content, build local citations, and structure your Google Business Profile alongside your site so you show up for the searches that matter in your area. A good fit for businesses competing against multiple local rivals, or ones that have never had real local SEO work done.",
       "benefits": [
         "Higher visibility in local search results and Google Maps",
         "More enquiries from people already looking to buy",
-        "A clearer picture of which searches actually bring in customers"
+        "A clearer picture of which searches bring in customers"
       ],
       "whatsIncluded": [
         "Technical SEO audit and fixes",
@@ -24,17 +24,17 @@
         { "title": "Track", "description": "Rankings and traffic are monitored monthly, with the plan adjusted as your market and competitors change." }
       ],
       "faqs": [
-        { "question": "How long does Local SEO take to show results?", "answer": "Most businesses start seeing movement within 8–12 weeks, though this depends on how competitive your market is and what state your current site is in." },
+        { "question": "How long does Local SEO take to show results?", "answer": "SEO is a longer-term investment that builds over weeks and months rather than overnight — how quickly depends on how competitive your market is and what state your current site is in." },
         { "question": "Do I need a new website for Local SEO to work?", "answer": "Not necessarily — we'll tell you honestly if your existing site is holding you back, but a lot of the work can be done regardless." }
       ]
     },
     {
       "id": "google-business-profile",
       "order": 2,
-      "group": "Visibility & marketing",
+      "group": "Visibility & Marketing",
       "title": "Google Business Profile Optimisation",
       "summary": "Turn your Google listing into your strongest source of new enquiries.",
-      "overview": "Your Google Business Profile is often the first thing a potential customer sees — before your website, before anything else. We make sure it's complete, accurate, and actively working for you, not just sitting there half-filled-in.",
+      "overview": "We fully optimise your Google Business Profile — categories, service areas, photos, posts, and review management — so it works as hard as your website does. Best suited to businesses that already have a Google listing but have never had it properly set up.",
       "benefits": [
         "Better visibility in the Google Maps 'local pack'",
         "A profile that answers customer questions before they even call",
@@ -48,133 +48,106 @@
       ],
       "process": [
         { "title": "Review", "description": "We check what's currently set up, what's missing, and what's actively working against you." },
-        { "title": "Optimise", "description": "Categories, services, descriptions, and photos are all brought up to a standard that actually converts." },
+        { "title": "Optimise", "description": "Categories, services, descriptions, and photos are all brought up to a standard that converts." },
         { "title": "Maintain", "description": "Ongoing posts, updates, and review responses keep the profile active — Google rewards profiles that stay current." }
       ],
       "faqs": [
         { "question": "Can you manage my Google Business Profile if I already have one?", "answer": "Yes — most of our work is improving existing profiles rather than starting from scratch." },
-        { "question": "Do you respond to reviews for me?", "answer": "We can, depending on your plan — either drafting responses for your approval or handling it directly." }
+        { "question": "Do you respond to reviews for me?", "answer": "We can — either drafting responses for your approval or handling it directly, depending on what you'd prefer." }
       ]
     },
     {
       "id": "website-design",
       "order": 3,
-      "group": "Visibility & marketing",
-      "title": "Website Design",
+      "group": "Visibility & Marketing",
+      "title": "Website Design & Landing Pages",
       "summary": "A site built to convert, not just to look good in a portfolio.",
-      "overview": "A website that looks nice but doesn't generate enquiries isn't doing its job. We design sites around what a visitor actually needs to see to pick up the phone or fill in a form — built properly, not from a generic template.",
+      "overview": "We design and build a mobile-first website — or a focused landing page for a specific campaign — around what your customers need to see to get in touch. Ideal if your current site is outdated, hard to update, or isn't generating enquiries.",
       "benefits": [
-        "A site built around your actual customers, not a stock template",
+        "A site built around your customers, not a stock template",
         "Fast, mobile-first, and built to convert",
         "Easy for you to update yourself, no developer needed"
       ],
       "whatsIncluded": [
         "Custom design based on your business and market",
         "Mobile-first, fast-loading build",
+        "Standalone landing pages for specific campaigns, where needed",
         "Basic on-page SEO foundation",
         "Content management system so you can edit it yourself"
       ],
       "process": [
-        { "title": "Plan", "description": "We work out what the site actually needs to do for your business before any design starts." },
+        { "title": "Plan", "description": "We work out what the site needs to do for your business before any design starts." },
         { "title": "Design & build", "description": "A site designed around your business, built properly rather than assembled from a generic template." },
         { "title": "Launch & train", "description": "Once it's live, we show you how to update it yourself — no waiting on a developer for small changes." }
       ],
       "faqs": [
         { "question": "Can I update the website myself once it's live?", "answer": "Yes — every site we build comes with a content management system so you can edit text, images, and pages without touching code." },
-        { "question": "How long does a new website take?", "answer": "Typically 4–6 weeks from approved design to launch, depending on how much content needs writing." }
+        { "question": "How long does a new website take?", "answer": "It depends on scope and how quickly content is ready on your side — we'll give you a realistic estimate during the strategy call." }
       ]
     },
     {
-      "id": "branding",
+      "id": "social-media-management",
       "order": 4,
-      "group": "Visibility & marketing",
-      "title": "Branding",
-      "summary": "A visual identity that looks right everywhere it appears — from your van to your invoices.",
-      "overview": "Branding is more than a logo — it's the consistent look and feel that makes your business recognisable and trustworthy wherever it shows up: your website, your van, your invoices, your Google listing.",
+      "group": "Visibility & Marketing",
+      "title": "Social Media Management",
+      "summary": "Consistent, on-brand posting across your channels with active replies, so your business stays visible between jobs.",
+      "overview": "We plan and post a regular content schedule across your key channels, matched to your brand, and monitor and reply to comments and messages so nothing sits unanswered. This runs as an ongoing monthly service. Best for businesses that know social matters but don't have the time or in-house skill to keep it consistent.",
       "benefits": [
-        "A consistent, professional look across every touchpoint",
-        "A brand that reflects the quality of the work you actually do",
-        "Assets you can hand to any printer, supplier, or platform without a headache"
+        "Consistent posting without it falling to the bottom of your to-do list",
+        "Comments and messages answered so enquiries don't get missed",
+        "Content that matches your brand, not generic stock posts"
       ],
       "whatsIncluded": [
-        "Logo design and brand mark",
-        "Colour palette and typography system",
-        "Brand guidelines document",
-        "Core templates — business cards, social, signage-ready files"
+        "Monthly content calendar and scheduling",
+        "Posts designed and written for your key channels",
+        "Comment and message monitoring and replies",
+        "Monthly performance summary"
       ],
       "process": [
-        { "title": "Discover", "description": "We learn about your business, your customers, and what you want people to think when they see your name." },
-        { "title": "Design", "description": "Logo, colours, and typography developed and refined with your input." },
-        { "title": "Document", "description": "Everything is delivered in a brand guideline pack so it stays consistent wherever it's used." }
+        { "title": "Plan", "description": "We build a content plan around your brand, services, and the channels your customers use." },
+        { "title": "Post", "description": "Content is designed, written, and scheduled consistently, so nothing goes quiet." },
+        { "title": "Engage", "description": "Comments and messages are monitored and replied to, so enquiries don't sit unanswered." }
       ],
       "faqs": [
-        { "question": "Do I need new branding if I already have a logo?", "answer": "Not always — sometimes it's a case of tightening up what you have rather than starting over. We'll be honest about which one you need." },
-        { "question": "What files will I actually receive?", "answer": "Every format you'd realistically need — print-ready, web-ready, and source files — with no dependency on us to reuse them." }
+        { "question": "Which platforms do you manage?", "answer": "Typically Facebook, Instagram, and Google Business Profile posts — we'll agree the right mix for your business during the strategy call." },
+        { "question": "Do you create the content or do I need to provide it?", "answer": "We handle the design and writing — we'll just need input from you on jobs, photos, or offers you want featured." }
       ]
     },
     {
-      "id": "google-ads",
+      "id": "missed-call-text-back",
       "order": 5,
-      "group": "Visibility & marketing",
-      "title": "Google Ads Management",
-      "summary": "Ad spend managed properly, with reporting that shows exactly where it went.",
-      "overview": "Google Ads can work extremely well for local businesses, or burn through budget fast if it's not managed properly. We build and manage campaigns aimed at enquiries, not just clicks, with reporting that shows exactly what your budget achieved.",
+      "group": "AI Solutions",
+      "title": "Missed-Call Text Back",
+      "summary": "Automation that follows up missed calls for you when you can't get to the phone.",
+      "overview": "When a call goes unanswered, the system automatically texts the caller so they're not left forgotten — with the message matched to your business. Works well for any business that takes calls on the tools, on-site, or otherwise can't always pick up straight away.",
       "benefits": [
-        "Campaigns targeted at people ready to buy, not just browsing",
-        "Full visibility into where every pound of ad spend goes",
-        "Ongoing optimisation instead of a campaign set up once and left alone"
+        "No more missed calls turning into lost enquiries",
+        "A message that sounds like your business, not a generic auto-reply",
+        "Set up once and it runs in the background"
       ],
       "whatsIncluded": [
-        "Campaign strategy and keyword research",
-        "Ad creation and landing page recommendations",
-        "Conversion tracking setup",
-        "Monthly performance reporting"
+        "Automatic text reply to missed calls",
+        "Message written and matched to your business",
+        "Connected to your existing business number",
+        "Monthly reporting on missed calls and replies sent"
       ],
       "process": [
-        { "title": "Set up", "description": "Campaigns are built around the searches most likely to convert for your specific business, not generic keywords." },
-        { "title": "Launch", "description": "Conversion tracking goes in first, so from day one we know what's actually working." },
-        { "title": "Optimise", "description": "Budgets, keywords, and ads are adjusted monthly based on real performance data, not guesswork." }
+        { "title": "Connect", "description": "The system is connected to your existing business number — no new number to give out." },
+        { "title": "Write", "description": "The follow-up message is written in your voice, covering what a caller needs to know." },
+        { "title": "Automate", "description": "From then on, missed calls get an instant reply without you lifting a finger." }
       ],
       "faqs": [
-        { "question": "What's the minimum ad budget you'd recommend?", "answer": "It depends on your market and competition — we'll give you a realistic number during the strategy call rather than a generic figure." },
-        { "question": "Is the management fee separate from ad spend?", "answer": "Yes — our fee covers strategy and management; your ad budget goes directly to Google." }
+        { "question": "Do I need a new phone number?", "answer": "No — it connects to the number you already use." },
+        { "question": "Can I change the message later?", "answer": "Yes — the message can be updated any time your business or offers change." }
       ]
     },
     {
-      "id": "ai-marketing",
+      "id": "google-review-follow-up",
       "order": 6,
-      "group": "AI solutions",
-      "title": "AI Marketing Solutions",
-      "summary": "Practical AI tools that save time on the repetitive parts of marketing.",
-      "overview": "Most 'AI marketing' talk is hype. What we actually do is use AI where it removes genuinely repetitive work — drafting content variations, summarising performance data, speeding up research — so more time goes into the strategic decisions that need a person.",
-      "benefits": [
-        "Time saved on repetitive content and reporting tasks",
-        "Faster turnaround without sacrificing quality control",
-        "AI used as a tool, not a replacement for judgement"
-      ],
-      "whatsIncluded": [
-        "AI-assisted content drafting for review",
-        "Automated performance summaries",
-        "Workflow recommendations specific to your business",
-        "Ongoing tool selection as the landscape changes"
-      ],
-      "process": [
-        { "title": "Identify", "description": "We look at where repetitive work is actually costing you time, rather than adding AI for its own sake." },
-        { "title": "Implement", "description": "Tools are set up and tested against your actual content and workflows." },
-        { "title": "Review", "description": "Everything AI produces gets a human check before it goes anywhere near a customer." }
-      ],
-      "faqs": [
-        { "question": "Will AI-written content sound generic?", "answer": "Not if it's reviewed properly — which is exactly why nothing goes out without a human pass first." },
-        { "question": "Do you use AI to replace strategy work?", "answer": "No — AI handles repetitive execution; strategy and judgement stay with a person." }
-      ]
-    },
-    {
-      "id": "ai-review-automation",
-      "order": 7,
-      "group": "AI solutions",
-      "title": "AI Google Review Automation",
+      "group": "AI Solutions",
+      "title": "Google Review Follow-Up",
       "summary": "Automatic, on-brand follow-up that gets more of your happy customers leaving reviews.",
-      "overview": "Most happy customers never leave a review, not because they don't want to, but because nobody asked them at the right time. We set up automatic, on-brand follow-up that asks at the right moment — without sounding like a robot.",
+      "overview": "After a job or purchase, the system follows up with customers at the right moment, asking happy customers to leave a review and routing unhappy ones to you privately first. Best suited to businesses that rely on reviews to win new customers but don't have a consistent way of asking for them.",
       "benefits": [
         "More reviews from customers who were already happy",
         "Follow-up that happens automatically, with no manual chasing",
@@ -194,34 +167,6 @@
       "faqs": [
         { "question": "Will this feel like spam to my customers?", "answer": "No — requests are timed and worded to feel like a genuine follow-up, not a mass blast." },
         { "question": "What happens if a customer leaves negative feedback?", "answer": "It's routed to you privately first, so you can resolve it before it potentially becomes a public review." }
-      ]
-    },
-    {
-      "id": "ai-chatbots",
-      "order": 8,
-      "group": "AI solutions",
-      "title": "AI Website Chatbots",
-      "summary": "A chatbot that answers real questions, on your site, any time someone's looking.",
-      "overview": "A lot of enquiries happen outside office hours, or get lost because nobody was free to answer the phone. A well-built chatbot answers the common questions immediately and hands the rest to you — it doesn't try to replace a real conversation, just cover the gap.",
-      "benefits": [
-        "Enquiries answered outside of business hours",
-        "Fewer repetitive questions landing in your inbox",
-        "Leads captured and handed to you, not lost"
-      ],
-      "whatsIncluded": [
-        "Chatbot setup trained on your actual services and FAQs",
-        "Lead capture and handoff to email or your booking system",
-        "Ongoing tuning as new questions come in",
-        "Monthly conversation reporting"
-      ],
-      "process": [
-        { "title": "Train", "description": "The chatbot is set up using your actual services, pricing structure, and common customer questions — not a generic script." },
-        { "title": "Launch", "description": "It goes live on your site, handling repetitive questions and capturing leads outside office hours." },
-        { "title": "Refine", "description": "We review real conversations and tune it monthly so it keeps improving." }
-      ],
-      "faqs": [
-        { "question": "Will it give customers wrong information?", "answer": "It's trained specifically on your business and kept within clear boundaries — if it doesn't know something, it hands off rather than guessing." },
-        { "question": "Can it book appointments directly?", "answer": "Depending on your existing booking system, yes — otherwise it captures the enquiry and hands it straight to you." }
       ]
     }
   ]

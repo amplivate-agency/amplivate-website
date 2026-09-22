@@ -82,7 +82,7 @@ ul {
 }
 
 .button--primary {
-  background: var(--color-charcoal);
+  background: var(--color-steel-blue);
   color: var(--color-white);
 }
 
@@ -92,12 +92,13 @@ ul {
 
 .button--secondary {
   background: transparent;
-  color: var(--color-charcoal);
+  color: var(--color-steel-blue);
   border-color: var(--color-silver);
 }
 
 .button--secondary:hover {
-  border-color: var(--color-charcoal);
+  color: var(--color-slate-blue);
+  border-color: var(--color-slate-blue);
 }
 
 .eyebrow {

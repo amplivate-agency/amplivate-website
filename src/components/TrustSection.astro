@@ -9,7 +9,7 @@ const points = home.trust.points;
       {points.map((point, i) => (
         <div class="trust__item" style={`--i: ${i}`} data-reveal>
           <span class="trust__ghost" aria-hidden="true">{point.ghost}</span>
-          <h3 class="trust__heading">{point.heading}</h3>
+          {point.heading && <h3 class="trust__heading">{point.heading}</h3>}
           <p class="trust__text">{point.text}</p>
         </div>
       ))}

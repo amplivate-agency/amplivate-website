@@ -1,8 +1,10 @@
 :root {
-  /* Brand colours */
+  /* Brand colours (from the logo) */
   --color-steel-blue: #647c99;
   --color-slate-blue: #5d6d86;
+  --color-light-steel-blue: #8a9bb2;
   --color-charcoal: #1a1f26;
+  --color-near-black: #111318;
   --color-light-grey: #e9e9ed;
   --color-silver: #b8bdc5;
   --color-white: #ffffff;
@@ -10,7 +12,7 @@
   /* Semantic aliases */
   --color-bg: var(--color-white);
   --color-bg-subtle: var(--color-light-grey);
-  --color-text: var(--color-charcoal);
+  --color-text: var(--color-near-black);
   --color-text-muted: var(--color-slate-blue);
   --color-border: var(--color-silver);
   --color-accent: var(--color-steel-blue);

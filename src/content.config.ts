@@ -19,20 +19,6 @@ const services = defineCollection({
   }),
 });
 
-const pricingTiers = defineCollection({
-  loader: items('src/data/pricing-tiers.json'),
-  schema: z.object({
-    order: z.number(),
-    name: z.string(),
-    price: z.string(),
-    priceNote: z.string(),
-    tagline: z.string(),
-    features: z.array(z.string()),
-    ctaLabel: z.string(),
-    ctaHref: z.string(),
-  }),
-});
-
 const addons = defineCollection({
   loader: items('src/data/addons.json'),
   schema: z.object({
@@ -80,4 +66,4 @@ const faqs = defineCollection({
   }),
 });
 
-export const collections = { services, pricingTiers, addons, work, testimonials, faqs };
+export const collections = { services, addons, work, testimonials, faqs };

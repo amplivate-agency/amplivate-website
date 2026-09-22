@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import home from '../data/home.json';
 
 const allServices = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
-const groupOrder = ['Visibility & marketing', 'AI solutions'];
+const groupOrder = ['Visibility & Marketing', 'AI Solutions'];
 const groups = groupOrder.map((label) => ({
   label,
   items: allServices.filter((s) => s.data.group === label),
@@ -22,18 +22,18 @@ const groups = groupOrder.map((label) => ({
         <div class="services__group">
           <p class="services__group-label">{group.label}</p>
           <ul class="services__list">
-            {group.items.map((item) => (
+            {group.items.map((item, i) => (
               <li>
-                <a href={`/services/${item.id}`} class="services__item">
-                  <span class="services__item-title">{item.data.title}</span>
-                  <span class="services__item-summary">{item.data.summary}</span>
-                </a>
+                <a href={`/services/${item.id}`} class="services__item">{item.data.title}</a>
+                {i < group.items.length - 1 && <span class="services__dot" aria-hidden="true">&middot;</span>}
               </li>
             ))}
           </ul>
         </div>
       ))}
     </div>
+
+    <a href="/services" class="services__more">See full details on Services &rarr;</a>
   </div>
 </section>
 
@@ -69,39 +69,44 @@ const groups = groupOrder.map((label) => ({
   .services__list {
     list-style: none;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .services__list li {
+    display: flex;
+    align-items: baseline;
   }
 
   .services__item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    text-decoration: none;
-    color: var(--color-text);
-    padding-block: 1.5rem;
-    border-top: 1px solid var(--color-light-grey);
-    transition: padding-left 0.35s var(--ease-out), color 0.35s var(--ease-out);
-  }
-
-  .services__list li:last-child .services__item {
-    border-bottom: 1px solid var(--color-light-grey);
-  }
-
-  .services__item:hover {
-    padding-left: 0.75rem;
-    color: var(--color-accent-strong);
-  }
-
-  .services__item-title {
     font-family: var(--font-heading);
     font-size: var(--step-lg);
     font-weight: 600;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: color 0.3s var(--ease-out);
   }
 
-  .services__item-summary {
-    color: var(--color-slate-blue);
-    font-size: var(--step-sm);
-    max-width: 46ch;
+  .services__item:hover {
+    color: var(--color-accent-strong);
+  }
+
+  .services__dot {
+    color: var(--color-silver);
+    margin-inline: 0.6rem;
+    font-size: var(--step-lg);
+  }
+
+  .services__more {
+    display: block;
+    text-align: center;
+    margin-top: 3rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-charcoal);
+    border-bottom: 1px solid var(--color-charcoal);
+    padding-bottom: 2px;
+    width: fit-content;
+    margin-inline: auto;
   }
 
   @media (min-width: 900px) {

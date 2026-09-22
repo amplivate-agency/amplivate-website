@@ -3,10 +3,12 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
 const allServices = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
-const groups = ['Visibility & marketing', 'AI solutions'].map((label) => ({
+const groups = ['Visibility & Marketing', 'AI Solutions'].map((label) => ({
   label,
   items: allServices.filter((s) => s.data.group === label),
 }));
+
+const addons = (await getCollection('addons')).sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout
@@ -18,8 +20,8 @@ const groups = ['Visibility & marketing', 'AI solutions'].map((label) => ({
       <span class="eyebrow">Services</span>
       <h1 class="services-hero__heading">Everything a local business needs to grow, done properly.</h1>
       <p class="services-hero__text">
-        Every service below can stand alone or work together as part of a plan — see
-        <a href="/plans"> plans</a> for how they're packaged.
+        Every service below can stand alone or work together — book a free strategy call and
+        we'll put together a plan around what your business needs.
       </p>
     </div>
   </section>
@@ -40,6 +42,30 @@ const groups = ['Visibility & marketing', 'AI solutions'].map((label) => ({
           </div>
         </div>
       ))}
+    </div>
+  </section>
+
+  <section class="addons">
+    <div class="container">
+      <div class="addons__header">
+        <span class="eyebrow">Extras</span>
+        <h2>Additional services</h2>
+        <p>Extra, standalone services that layer on top of the core services above — or work on their own.</p>
+      </div>
+
+      <div class="addons__list">
+        {addons.map((addon) => (
+          <article class="addons__item">
+            <h3>{addon.data.name}</h3>
+            <p class="addons__what">{addon.data.whatItDoes}</p>
+            <p class="addons__why"><strong>Why it's valuable:</strong> {addon.data.whyValuable}</p>
+            <ul class="addons__benefits">
+              {addon.data.benefits.map((b) => <li>{b}</li>)}
+            </ul>
+            <p class="addons__price">{addon.data.price}</p>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 </Layout>
@@ -124,6 +150,81 @@ const groups = ['Visibility & marketing', 'AI solutions'].map((label) => ({
 
   @media (min-width: 800px) {
     .services-list__items {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .addons {
+    padding-block: 0 var(--section-padding);
+  }
+
+  .addons__header {
+    max-width: 640px;
+    margin-bottom: 3rem;
+  }
+
+  .addons__header h2 {
+    font-size: var(--step-2xl);
+    margin-block: 0.75rem 1rem;
+  }
+
+  .addons__header p {
+    color: var(--color-slate-blue);
+  }
+
+  .addons__list {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .addons__item {
+    border: 1px solid var(--color-light-grey);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+  }
+
+  .addons__item h3 {
+    font-size: var(--step-lg);
+    margin-bottom: 0.75rem;
+  }
+
+  .addons__what,
+  .addons__why {
+    color: var(--color-slate-blue);
+    margin-bottom: 0.75rem;
+  }
+
+  .addons__benefits {
+    list-style: none;
+    margin-bottom: 1.25rem;
+  }
+
+  .addons__benefits li {
+    position: relative;
+    padding-left: 1.25rem;
+    color: var(--color-slate-blue);
+    font-size: var(--step-sm);
+    margin-bottom: 0.4rem;
+  }
+
+  .addons__benefits li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+
+  .addons__price {
+    font-weight: 700;
+    color: var(--color-accent-strong);
+  }
+
+  @media (min-width: 800px) {
+    .addons__list {
       grid-template-columns: repeat(2, 1fr);
     }
   }

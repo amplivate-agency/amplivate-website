@@ -4,6 +4,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'https://amplivate.co.uk',
   redirects: {
-    '/pricing': '/plans',
+    '/pricing': '/services',
+    '/plans': '/services',
   },
 });
