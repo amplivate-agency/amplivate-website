@@ -60,18 +60,17 @@
       "id": "website-design",
       "order": 3,
       "group": "Visibility & Marketing",
-      "title": "Website Design & Landing Pages",
+      "title": "Website Design & Landing Page Build",
       "summary": "A site built to convert, not just to look good in a portfolio.",
-      "overview": "We design and build a mobile-first website — or a focused landing page for a specific campaign — around what your customers need to see to get in touch. Ideal if your current site is outdated, hard to update, or isn't generating enquiries.",
+      "overview": "A website that looks nice but doesn't generate enquiries isn't doing its job. We design sites around what a visitor needs to see to pick up the phone or fill in a form — built properly, not from a generic template.",
       "benefits": [
-        "A site built around your customers, not a stock template",
+        "A site built around your actual customers, not a stock template",
         "Fast, mobile-first, and built to convert",
         "Easy for you to update yourself, no developer needed"
       ],
       "whatsIncluded": [
         "Custom design based on your business and market",
         "Mobile-first, fast-loading build",
-        "Standalone landing pages for specific campaigns, where needed",
         "Basic on-page SEO foundation",
         "Content management system so you can edit it yourself"
       ],
@@ -91,26 +90,31 @@
       "group": "Visibility & Marketing",
       "title": "Social Media Management",
       "summary": "Consistent, on-brand posting across your channels with active replies, so your business stays visible between jobs.",
-      "overview": "We plan and post a regular content schedule across your key channels, matched to your brand, and monitor and reply to comments and messages so nothing sits unanswered. This runs as an ongoing monthly service. Best for businesses that know social matters but don't have the time or in-house skill to keep it consistent.",
+      "overview": "Your business shows up on social media even when you're not posting. We take that over — planning, creating, and publishing content that keeps your profiles active and on-brand, so social media stops being another thing on your to-do list.",
       "benefits": [
-        "Consistent posting without it falling to the bottom of your to-do list",
-        "Comments and messages answered so enquiries don't get missed",
-        "Content that matches your brand, not generic stock posts"
+        "Consistent posting",
+        "On-brand content",
+        "Better visibility",
+        "Monthly reporting",
+        "Time back for you"
       ],
       "whatsIncluded": [
-        "Monthly content calendar and scheduling",
-        "Posts designed and written for your key channels",
-        "Comment and message monitoring and replies",
-        "Monthly performance summary"
+        "Content calendar",
+        "Post design and copywriting",
+        "Scheduling",
+        "Light community management",
+        "Monthly performance report"
       ],
       "process": [
-        { "title": "Plan", "description": "We build a content plan around your brand, services, and the channels your customers use." },
-        { "title": "Post", "description": "Content is designed, written, and scheduled consistently, so nothing goes quiet." },
-        { "title": "Engage", "description": "Comments and messages are monitored and replied to, so enquiries don't sit unanswered." }
+        { "title": "Discovery call", "description": "We learn your brand, audience, and goals." },
+        { "title": "Content plan", "description": "You approve a month of posts in advance." },
+        { "title": "Creation", "description": "We design, write and create every post for you." },
+        { "title": "Publishing", "description": "Posts go live on schedule, no input needed from you." },
+        { "title": "Reporting", "description": "Monthly check-in on performance and next steps." }
       ],
       "faqs": [
-        { "question": "Which platforms do you manage?", "answer": "Typically Facebook, Instagram, and Google Business Profile posts — we'll agree the right mix for your business during the strategy call." },
-        { "question": "Do you create the content or do I need to provide it?", "answer": "We handle the design and writing — we'll just need input from you on jobs, photos, or offers you want featured." }
+        { "question": "How many posts do I get each month?", "answer": "That depends on your plan — we'll agree a posting frequency during onboarding and stick to it." },
+        { "question": "Do I need to approve posts before they go live?", "answer": "Yes, you'll get a content calendar to review each month before anything is published." }
       ]
     },
     {
@@ -119,35 +123,36 @@
       "group": "AI Solutions",
       "title": "Missed-Call Text Back",
       "summary": "Automation that follows up missed calls for you when you can't get to the phone.",
-      "overview": "When a call goes unanswered, the system automatically texts the caller so they're not left forgotten — with the message matched to your business. Works well for any business that takes calls on the tools, on-site, or otherwise can't always pick up straight away.",
+      "overview": "Never lose a job to a missed call. The second a call goes unanswered, your customer gets an instant text back with a way to book, so the enquiry doesn't go to a competitor.",
       "benefits": [
-        "No more missed calls turning into lost enquiries",
-        "A message that sounds like your business, not a generic auto-reply",
-        "Set up once and it runs in the background"
+        "Fewer lost leads",
+        "Instant response",
+        "No extra effort"
       ],
       "whatsIncluded": [
-        "Automatic text reply to missed calls",
-        "Message written and matched to your business",
-        "Connected to your existing business number",
-        "Monthly reporting on missed calls and replies sent"
+        "Automatic text-back for missed calls",
+        "Custom message written for your business",
+        "Lead capture",
+        "Monthly reporting"
       ],
       "process": [
-        { "title": "Connect", "description": "The system is connected to your existing business number — no new number to give out." },
-        { "title": "Write", "description": "The follow-up message is written in your voice, covering what a caller needs to know." },
-        { "title": "Automate", "description": "From then on, missed calls get an instant reply without you lifting a finger." }
+        { "title": "Setup", "description": "We connect the service to your business number." },
+        { "title": "Customise", "description": "You approve the text message template." },
+        { "title": "Go live", "description": "Missed calls trigger an instant text automatically." },
+        { "title": "Review", "description": "Monthly reports show leads recovered." }
       ],
       "faqs": [
-        { "question": "Do I need a new phone number?", "answer": "No — it connects to the number you already use." },
-        { "question": "Can I change the message later?", "answer": "Yes — the message can be updated any time your business or offers change." }
+        { "question": "What does the customer receive when I miss their call?", "answer": "An instant text letting them know you'll be in touch, with an option to leave details or book in directly." },
+        { "question": "Does this work with my existing business number?", "answer": "Yes, it connects to the number you already use, so there's nothing new for customers to learn." }
       ]
     },
     {
       "id": "google-review-follow-up",
       "order": 6,
       "group": "AI Solutions",
-      "title": "Google Review Follow-Up",
+      "title": "Google Review Follow Up",
       "summary": "Automatic, on-brand follow-up that gets more of your happy customers leaving reviews.",
-      "overview": "After a job or purchase, the system follows up with customers at the right moment, asking happy customers to leave a review and routing unhappy ones to you privately first. Best suited to businesses that rely on reviews to win new customers but don't have a consistent way of asking for them.",
+      "overview": "Most happy customers never leave a review, not because they don't want to, but because nobody asked them at the right time. We set up automatic, on-brand follow-up that asks at the right moment — without sounding like a robot.",
       "benefits": [
         "More reviews from customers who were already happy",
         "Follow-up that happens automatically, with no manual chasing",
