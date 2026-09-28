@@ -70,3 +70,7 @@ Pages via a CNAME record, Cloudflare here is only handling DNS/email.
 5. Update `WORKER_URL` in `src/pages/contact.astro`'s `<script>` to the deployed
    `*.workers.dev` URL from step 3.
 6. Send a real test submission through the live form before calling this done.
+
+The worker also rate-limits each sending IP to 5 submissions per 60 seconds
+(the `[[ratelimits]]` binding in `wrangler.toml`) — no setup needed, it's
+provisioned automatically on deploy.

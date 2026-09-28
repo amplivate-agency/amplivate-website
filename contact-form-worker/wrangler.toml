@@ -5,6 +5,17 @@ compatibility_date = "2026-07-01"
 [[send_email]]
 name = "EMAIL"
 
+# Caps each sending IP to 5 requests per 60 seconds — see worker.js. The
+# namespace_id just needs to be a unique positive integer within this
+# account; it doesn't need to be created anywhere first.
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 5
+  period = 60
+
 [vars]
 FROM_EMAIL = "notifications@amplivate.co.uk"
 TO_EMAIL = "owner@example.com"
