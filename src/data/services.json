@@ -249,7 +249,7 @@
         },
         {
           "title": "Monitor",
-          "description": "Volume and sentiment are tracked monthly, with negative feedback flagged privately first."
+          "description": "Volume and sentiment are tracked monthly"
         }
       ],
       "title": "Google Review Follow Up",
