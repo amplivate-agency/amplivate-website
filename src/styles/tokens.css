@@ -9,12 +9,15 @@
   --color-silver: #b8bdc5;
   --color-white: #ffffff;
 
-  /* Semantic aliases */
+  /* Semantic aliases (light theme, default) */
   --color-bg: var(--color-white);
   --color-bg-subtle: var(--color-light-grey);
+  --color-surface: var(--color-white);
   --color-text: var(--color-near-black);
   --color-text-muted: var(--color-slate-blue);
   --color-border: var(--color-silver);
+  --color-divider: var(--color-light-grey);
+  --color-ghost: var(--color-light-grey);
   --color-accent: var(--color-steel-blue);
   --color-accent-strong: var(--color-slate-blue);
 
@@ -45,4 +48,29 @@
   /* Motion */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --duration-base: 0.6s;
+}
+
+/* Dark theme — same brand colours, page surfaces inverted around Charcoal
+   and Near Black. Checked for contrast the same way as the light mapping:
+   Light Steel Blue is the only brand blue that clears 4.5:1 on Charcoal, so
+   it takes over both accent roles rather than splitting between two blues
+   the way Steel Blue/Slate Blue do on white. */
+html {
+  color-scheme: light;
+}
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+:root[data-theme='dark'] {
+  --color-bg: var(--color-charcoal);
+  --color-bg-subtle: var(--color-near-black);
+  --color-surface: var(--color-near-black);
+  --color-text: var(--color-light-grey);
+  --color-text-muted: var(--color-silver);
+  --color-divider: rgba(233, 233, 237, 0.12);
+  --color-ghost: rgba(233, 233, 237, 0.08);
+  --color-accent: var(--color-light-steel-blue);
+  --color-accent-strong: var(--color-light-steel-blue);
 }

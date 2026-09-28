@@ -19,6 +19,9 @@ body {
   font-size: var(--step-base);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  transition:
+    background-color 0.25s var(--ease-out),
+    color 0.25s var(--ease-out);
 }
 
 h1,

@@ -45,7 +45,7 @@ const projects = (await getCollection('work'))
   }
 
   .work__note {
-    color: var(--color-slate-blue);
+    color: var(--color-text-muted);
   }
 
   .work__list {
@@ -55,11 +55,11 @@ const projects = (await getCollection('work'))
 
   .work__item {
     padding-block: 2.5rem;
-    border-top: 1px solid var(--color-light-grey);
+    border-top: 1px solid var(--color-divider);
   }
 
   .work__item:last-child {
-    border-bottom: 1px solid var(--color-light-grey);
+    border-bottom: 1px solid var(--color-divider);
   }
 
   .work__tag {
@@ -78,7 +78,7 @@ const projects = (await getCollection('work'))
   }
 
   .work__text {
-    color: var(--color-slate-blue);
+    color: var(--color-text-muted);
     max-width: 56ch;
   }
 
@@ -87,8 +87,8 @@ const projects = (await getCollection('work'))
     margin-top: 2.5rem;
     font-weight: 600;
     text-decoration: none;
-    color: var(--color-charcoal);
-    border-bottom: 1px solid var(--color-charcoal);
+    color: var(--color-text);
+    border-bottom: 1px solid var(--color-text);
     padding-bottom: 2px;
   }
 </style>
