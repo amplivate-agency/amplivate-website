@@ -141,10 +141,9 @@ collections:
               - label: "Points"
                 name: "points"
                 widget: "list"
-                summary: "{{fields.heading}}"
+                summary: "{{fields.ghost}}"
                 fields:
                   - { label: "Background word", name: "ghost", widget: "string" }
-                  - { label: "Heading", name: "heading", widget: "string" }
                   - { label: "Text", name: "text", widget: "text" }
           - label: "Services section"
             name: "services"
