@@ -267,7 +267,7 @@
         },
         {
           "question": "What happens if a customer leaves negative feedback?",
-          "answer": "It's routed to you privately first, so you can resolve it before it potentially becomes a public review."
+          "answer": "Negative feedback is flagged to you immediately, so you can respond fast, put things right, and keep the customer happy."
         }
       ],
       "group": "AI Solutions"
