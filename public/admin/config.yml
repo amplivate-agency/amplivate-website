@@ -28,7 +28,7 @@ collections:
               - label: "Group"
                 name: "group"
                 widget: "select"
-                options: ["Visibility & marketing", "AI solutions"]
+                options: ["Visibility & Marketing", "AI Solutions"]
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Short summary (used on cards)", name: "summary", widget: "string" }
               - { label: "Overview", name: "overview", widget: "text" }
@@ -48,51 +48,6 @@ collections:
                 fields:
                   - { label: "Question", name: "question", widget: "string" }
                   - { label: "Answer", name: "answer", widget: "text" }
-
-  - name: "pricing_tiers"
-    label: "Pricing Tiers"
-    files:
-      - file: "src/data/pricing-tiers.json"
-        label: "Pricing Tiers"
-        name: "pricing_tiers"
-        fields:
-          - label: "Tiers"
-            name: "items"
-            widget: "list"
-            summary: "{{fields.name}}"
-            fields:
-              - { label: "ID", name: "id", widget: "string" }
-              - { label: "Display order (left to right)", name: "order", widget: "number" }
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Price", name: "price", widget: "string", hint: "e.g. £299" }
-              - { label: "Price note", name: "priceNote", widget: "string", hint: "e.g. /month" }
-              - { label: "Tagline", name: "tagline", widget: "string" }
-              - label: "Features (cumulative)"
-                name: "features"
-                widget: "list"
-                hint: "The FULL list of everything this tier includes, not just what's new. The site works out the 'Everything in X, plus:' wording and the comparison table automatically from this."
-              - { label: "Button label", name: "ctaLabel", widget: "string" }
-              - { label: "Button link", name: "ctaHref", widget: "string" }
-
-  - name: "addons"
-    label: "Add-ons"
-    files:
-      - file: "src/data/addons.json"
-        label: "Add-ons"
-        name: "addons"
-        fields:
-          - label: "Add-ons"
-            name: "items"
-            widget: "list"
-            summary: "{{fields.name}}"
-            fields:
-              - { label: "ID", name: "id", widget: "string" }
-              - { label: "Display order", name: "order", widget: "number" }
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "What it does", name: "whatItDoes", widget: "text" }
-              - { label: "Why it's valuable", name: "whyValuable", widget: "text" }
-              - { label: "Price", name: "price", widget: "string" }
-              - { label: "Benefits", name: "benefits", widget: "list" }
 
   - name: "work"
     label: "Work / Portfolio"
@@ -217,13 +172,6 @@ collections:
               - { label: "Eyebrow", name: "eyebrow", widget: "string" }
               - { label: "Heading", name: "heading", widget: "string" }
               - { label: "Note", name: "note", widget: "text" }
-          - label: "Pricing section"
-            name: "pricing"
-            widget: "object"
-            fields:
-              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
-              - { label: "Heading", name: "heading", widget: "string" }
-              - { label: "Text", name: "text", widget: "text" }
           - label: "Final CTA"
             name: "finalCta"
             widget: "object"
